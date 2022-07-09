@@ -1,0 +1,12 @@
+
+.mainpage{
+display: flex;
+color: rgb(218, 218, 218);
+font-size: 5vh;
+justify-content: space-between;
+height: 100vh;
+width: 100%;
+background-color:black;
+flex-wrap: wrap;
+flex-direction: row;
+}
