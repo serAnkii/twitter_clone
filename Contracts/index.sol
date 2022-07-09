@@ -18,15 +18,42 @@ contract tweets{
         string tweetImg;
     }
 
+    event tweetCreated (
+        address tweeter,
+        uint256 id,
+        string tweettext,
+        string tweetImg
+    
+    );
+
 
     mapping (uint256 => tweet) tweets;
 
     function addTweet(
         string memory tweettext,
-        string memory tweetImg ) public Payable{ //paybale is function modifier that checks if the certaion condition is met and then only executes the function
+        string memory tweetImg ) public payable {
         require(msg.value==(1 ether) ,"this transaction will require 1 ether please continue");
-        
+        tweet storage newTweet = tweets[counter];
+        newTweet.tweettext=tweettext;
+        newTweet.tweetImg=tweetImg;
+        newTweet.tweeter=msg.sender;
+        newTweet.id=counter;
+
+        emit tweetCreated(
+            msg.sender,
+            counter,
+            tweettext,
+            tweetImg
+        );
+        counter++;
+// to send the ether to the owner of the smart contract.
+        payable(owner).transfer(msg.value);
+        }
+
+        function getTweets(uint256 id) public view returns (string memory , string memory ,address)
+        {
+            require (id<counter,"tweet no found");
+            tweet storage t = tweets[id];
+            return (t.tweettext,t.tweetImg,t.tweeter);
         }
 }
-
-//yet to be completed
