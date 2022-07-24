@@ -2,7 +2,11 @@ import React from 'react'
 
 const Adds = () => {
   return (
-    <div>Adds</div>
+    <>
+    <div id="adds">
+      <iframe src="https://bio.link/serAnkii" frameborder="12">Reach out the developer</iframe>
+    </div>
+    </>
   )
 }
 

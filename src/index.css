@@ -13,6 +13,7 @@ Shadow of Light Blue: #EEFBFB */
 
 html{
     font-size: 20px;
+    color: aliceblue;
 }
 
 body{
@@ -41,12 +42,12 @@ body{
 }
 
 #section1{
-    /* background-color: #12232E; */
+    background-color: #12232E;
     width: 60% !important;
     /* margin-right: 0.5rem; */
 }
 #section2{
-    /* background-color: #007CC7; */
+    background-color: #007CC7;
     /* border-bottom-left-radius: 10rem; */
 }
 
@@ -57,5 +58,5 @@ body{
     width: 60% !important;
     /* box-shadow:-0.3rem 0rem 10rem  #EEFBFB; */
     /* margin-left: 0.5rem; */
-    /* background-color: #007CC7; */
+    background-color: #007CC7;
 }

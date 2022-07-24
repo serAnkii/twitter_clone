@@ -1,15 +1,21 @@
 body{
-    overflow: hidden;
+    overflow: scroll;
 }
 
 #nav{
     display: flex;
-    flex-direction: column;
+    flex-direction: column;  
     justify-content: space-around;
     justify-items: space-around;
     overflow: scroll !important;
 }
 
 .link{
-    margin: 1rem;
+    margin: 0.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    color: #EEFBFB;
+    width: fit-content;
 }
