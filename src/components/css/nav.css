@@ -1,0 +1,15 @@
+body{
+    overflow: hidden;
+}
+
+#nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-items: space-around;
+    overflow: scroll !important;
+}
+
+.link{
+    margin: 1rem;
+}

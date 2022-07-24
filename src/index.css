@@ -1,0 +1,61 @@
+/* 
+website colour scheme :
+
+Dark Blue: #12232E
+
+Lighter Blue: #007CC7
+
+Lightest Blue: #4DA8DA
+
+Shadow of Dark Blue: #203647
+
+Shadow of Light Blue: #EEFBFB */
+
+html{
+    font-size: 20px;
+}
+
+body{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    /* background-color: #12232E; */
+    /* background: linear-gradient(-50deg,violet,indigo,blue,green,yellow,orange,pink); */
+    background-attachment:fixed;
+}
+
+#main_div{
+    width: 100%;
+    height: 100vh;
+    
+    border: 1px solid salmon;
+    display: flex;
+    justify-content: space-around;
+}
+
+.section{
+ border:1px solid  red;
+ position: relative;
+ width: 100%;
+ 
+}
+
+#section1{
+    /* background-color: #12232E; */
+    width: 60% !important;
+    /* margin-right: 0.5rem; */
+}
+#section2{
+    /* background-color: #007CC7; */
+    /* border-bottom-left-radius: 10rem; */
+}
+
+#section2:hover{
+    box-shadow: 2px 2px 10px red ;
+}
+#section3{
+    width: 60% !important;
+    /* box-shadow:-0.3rem 0rem 10rem  #EEFBFB; */
+    /* margin-left: 0.5rem; */
+    /* background-color: #007CC7; */
+}
