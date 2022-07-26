@@ -1,21 +1,58 @@
-body{
-    overflow: scroll;
-}
-
 #nav{
     display: flex;
     flex-direction: column;  
     justify-content: space-around;
     justify-items: space-around;
-    overflow: scroll !important;
+    
 }
 
 .link{
-    margin: 0.5rem;
+    cursor: pointer;
+    margin: 1.7rem;
     text-decoration: none;
     font-size: 1rem;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
     color: #EEFBFB;
     width: fit-content;
+}
+
+.link:hover{
+    background-color: #282828;
+    border-radius: 3rem;
+}
+
+#icon_twit{
+    display: flex;
+}
+
+#icon_twit h2{
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+#icon_twit h1{
+    
+    margin: 0.9rem;
+    color: #1DA1F2;
+}
+
+#tweet{
+ display: flex;
+ justify-content: center;
+
+ width: 100%;
+}
+
+#tweet button{
+    font-size: 0.9rem ;
+    margin-bottom: 1rem;
+    background-color: #1DA1F2;
+    border-radius: 3rem;
+    width: 60%;
+    color:white ;
+    border: 1px solid #0476bd;
+    height: 2rem;
+    font-weight: bolder;
+
 }
