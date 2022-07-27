@@ -1,5 +1,5 @@
 import React from 'react'
-import "./index.css"
+import "./app.css"
 import {Nav} from "./components/Nav"
 import Content from "./components/content/Content"
 import Adds from "./components/Adds"
