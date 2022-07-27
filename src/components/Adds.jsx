@@ -7,7 +7,7 @@ const Adds = () => {
     <div id="adds">
     <Input
   hasCopyButton
-  label="Search Twitter"
+  placeholder="Search Twitter"
   name="search"
   onBlur={function noRefCheck(){}}
   onChange={function noRefCheck(){}}
