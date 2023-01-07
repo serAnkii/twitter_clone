@@ -1,2 +1,4 @@
-# web3_twitter
-Decentralized clone of @twitter
+# clone of @twitter
+# languages and tools used :
+  - React.js
+  - Firebase
