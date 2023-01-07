@@ -1,0 +1,12 @@
+#sidebar{
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    
+}
+
+.sidebar__twitterIcon{
+    color: rgb(5, 115, 199);
+    height: 3rem;
+    width: 30rem;
+}

@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#top_container
+{
+    display: flex;
+    gap: 3rem;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    
+}

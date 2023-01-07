@@ -1,0 +1,10 @@
+#option{
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+#option:hover{
+  color: rgb(13, 126, 225);
+  cursor: grabbing;
+}
