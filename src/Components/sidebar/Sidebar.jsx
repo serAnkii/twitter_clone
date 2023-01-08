@@ -18,8 +18,7 @@ import "../../css/sidebar.css";
 const Sidebar = () => {
   return (
     <div id="sidebar">
-      <TwitterIcon className="sidebar__twitterIcon" />
-
+      <TwitterIcon id="logo"/>
       <Sidebaroption className="options" active Icon={HomeIcon} text="Home" />
       <Sidebaroption className="options" Icon={SearchIcon} text="Explore" />
       <Sidebaroption className="options" Icon={NotificationsNoneIcon} text="Notifications" />
@@ -29,7 +28,7 @@ const Sidebar = () => {
       <Sidebaroption className="options" Icon={PermIdentityIcon} text="Profile" />
       <Sidebaroption className="options" Icon={MoreHorizIcon} text="More" />
 
-      <Button variant="contained">Tweet</Button>
+      <Button variant="contained" id="tweet-button">Tweet</Button>
        
     </div>
   );

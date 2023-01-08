@@ -1,8 +1,11 @@
 import React from 'react'
 
+import "../css/feed.css"
 const Feed = () => {
   return (
-    <div>Feed</div>
+    <div id='feed'>
+      Feed
+    </div>
   )
 }
 

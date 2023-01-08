@@ -2,11 +2,23 @@
     margin: 0;
     padding: 0;
 }
+
+html{
+    --twitter-color:rgb(29, 155, 240);
+    --background-color:#d7d9db;
+    font-size: 10px;
+}
+
 #top_container
 {
     display: flex;
-    gap: 3rem;
-    /* align-items: center; */
-    justify-content: space-evenly;
-    
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid;
+    justify-content: space-between;
+       
+}
+
+::-webkit-scrollbar{
+    display: none;
 }
