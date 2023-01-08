@@ -1,5 +1,5 @@
 import React from 'react'
-import Feed from "./Components/Feed"
+import Feed from "./Components/feed/Feed.jsx"
 import Sidebar from "./Components/sidebar/Sidebar"
 import Widgets from "./Components/Widgets"
 

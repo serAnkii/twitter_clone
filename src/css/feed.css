@@ -1,5 +1,86 @@
 #feed{
+
     width: 50vw;
-    height: 100vh;
-    border: 1px solid black;
+    height: 99vh;
+    border-right: 1px solid var(--background-color);
+    overflow-y: scroll;
+}
+
+#feed_header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
+    backdrop-filter: blur(.45rem);
+    /* background-color: var(--background-color); */
+    /* border: 1px solid var(--background-color); */
+    padding: 1.5rem 2rem;
+}
+
+.tweetbox{
+    border-bottom: 1px solid var(--background-color);
+    padding: 1.5rem 2rem;
+    display: flex;
+    
+}
+
+.tweetbox form{
+    
+    margin-left: 2rem;
+    padding: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    margin-top: 1rem;
+    
+}
+
+.tweetbox form input{
+    border: none;
+    font-size: 2rem;
+
+}
+
+#attachments{
+    display: flex;
+    width: 100%;
+    /* padding: 2rem;  */
+    column-gap: 2rem;
+    align-items: center;
+
+}
+
+#attachments input{
+    width: 6rem;
+    height: 6rem;
+
+}
+
+#attachments #tweet-button{
+    font-size: 1.8rem !important;
+    width: 20%;
+    height: 4rem;
+    border-radius: 100rem;
+    font-weight: 800;
+    text-transform: capitalize;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.input-items:last-child{
+    margin-left: auto !important;
+}
+
+.input-icons{
+    font-size: 3rem !important;
+    color: var(--twitter-color);
+    padding: 0.5rem;
+}
+
+.input-icons:hover{
+    background-color: var(--background-color2);
+    border-radius: 100rem;
+    transition: 100ms ease-in;
+    cursor: pointer;
 }

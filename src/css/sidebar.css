@@ -3,8 +3,8 @@
     gap: 1rem;
     flex-direction: column;
     width: 20vw;
-    height: 100vh;
-    border: 0.1 solid black;
+    height: 99vh;
+    border-right: 1px solid var(--background-color);
     align-items: center;
     /* justify-content: center; */
     align-items: flex-start;
@@ -48,7 +48,7 @@
 
 #logo:hover{
     border-radius: 100rem;
-    background-color:#e0eff8 ;
+    background-color: var(--background-color2) ;
 }
 .option .MuiSvgIcon-root{
     font-size: 3.3rem !important;
