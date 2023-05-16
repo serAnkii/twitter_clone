@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    --light_text:white;
+    --twitter-color: #1DA1F2;
+    --background-color:#d7d9db;
+    --background-color2:#e0eff8;
+    font-size: 10px;
+}
+
+body
+{   background-color: black;
+    color: white;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-between;
+
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
