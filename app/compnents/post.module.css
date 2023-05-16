@@ -1,51 +1,110 @@
 .post{
     display: flex;
-    padding: 1.5rem 2rem;
+    padding-top: 15px;
+    padding-left: 15px;
     gap: 1rem;
-    border: 1px solid var(--background-color);
+    border-bottom: 1px solid var(--background-color);
 }
 .post__body{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 3rem;
 }
 
 .post_header{
     display: flex;
-    row-gap: 0.5rem;
-    column-gap: 0.3rem;
-    align-items: centers;
+    width: 39vw;
+    align-items: baseline;
 }
 
-.dim{
-    color: var(--background-color);
-    font-size: 1.5rem;
-}
+
 
 .header_items:last-child{
     margin-left: auto;
+    font-size: 2.5rem;
+    color: var(--background-color);
 }
 
 .post__text p{
     font-size: 2rem;
-    font-weight: 100;
+    font-weight: 300;
+    letter-spacing: 1px;
+    
 }
 
-.post_image img{
-    height: 50rem;
-    width: 100%;
-    border-radius:1rem;
+.post_image{
+    border-radius: 15px;
+    /* width: 100%; */
+    /* height: 90%; */
 }
+
 
 .post__stats{
     display: flex;
     font-size: 1.6rem;
     font-weight: 100;
     column-gap: 7rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
 }
 
+
+
+.post:hover{
+    background-color: var(--post_background);
+}
 .post_statdiv{
     display: flex;
     align-items: center;
     column-gap: 1rem;
 }
+
+.post_statdiv:hover{
+    cursor: pointer;
+}
+
+.reactions{
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+
+.post_statdiv:nth-child(1):hover p {
+    color: #1DA1F2;
+  }
+  
+  .post_statdiv:nth-child(1):hover .reactions {
+    box-shadow: 0 0 5px 5px #1DA1F2;
+  }
+
+  .post_statdiv:nth-child(2):hover p {
+    color: #00ba7c;
+  }
+  
+  .post_statdiv:nth-child(2):hover .reactions {
+    box-shadow: 0 0 5px 5px #00ba7c;
+  }
+
+  .post_statdiv:nth-child(3):hover p {
+    color: #f91880;
+  }
+  
+  .post_statdiv:nth-child(3):hover .reactions {
+    box-shadow: 0 0 5px 5px #f91880;
+  }
+
+  .post_statdiv:nth-child(4):hover p {
+    color: #1d9bf0;
+  }
+  
+  .post_statdiv:nth-child(4):hover .reactions {
+    box-shadow: 0 0 5px 5px #1d9bf0;
+  }
+
+  .post_statdiv:nth-child(5):hover p {
+    color: #1d9bf0;
+  }
+  
+  .post_statdiv:nth-child(5):hover .reactions {
+    box-shadow: 0 0 5px 5px #1d9bf0;
+  }
