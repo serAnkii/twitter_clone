@@ -2,22 +2,24 @@
   display: flex;
   gap: 1rem;
   flex-direction: column;
-  width: 20vw;
+  /* width: 17vw; */
   height: 100vh;
   border-right: 1px solid var(--background-color);
-  align-items: center;
   /* justify-content: center; */
-  align-items: flex-start;
-  padding-left: 9%;
+  align-items:  flex-start;
+  padding-right: auto;
   padding-top: 0.1rem;
   overflow: scroll;
+  margin-left: 30%;
+  flex-shrink: 2;
+  
 }
 
 .option {
+  align-items: baseline;
   display: flex;
-  align-items: center;
   padding-left: 0.5rem;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1.5rem;
   padding: 1rem;
   font-size: 1rem !important;
@@ -41,6 +43,7 @@
   /* font-size: 3rem ; */
   /* border: 1px solid black; */
   color: var(--background-color);
+  
 }
 
 .logo:hover {
@@ -67,6 +70,7 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   border: none;
   cursor: pointer;
+  
 }
 
 .tweet_button:hover {
@@ -82,17 +86,29 @@
   padding: 1rem;
   font-size: 1rem !important;
   border-radius: 4rem;
+  
 }
 
 .user:hover {
-  background-color: var(--background-color);
+  background-color: var(--post_background);
   cursor: pointer;
   transition: 200ms ease-out;
 }
 
-@media only screen and (max-width: 55rem) {
+@media (max-width:1303px ) {
   .sidebar h1 {
     display: none;
     padding-left: 0;
+  }
+  .tweet_button{
+    width: fit-content;
+  }
+  .names{
+    display: none;
+  }
+
+  .option, .tweet_button, .user , .logo{
+  margin-left:auto;
+  margin-right: 1rem;
   }
 }

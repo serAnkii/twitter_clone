@@ -4,7 +4,7 @@
 }
 
 html{
-    --light_text:white;
+    --light_text:#e7e9ea;
     --images_color:#1d9bf0;
     --twitter-color: #1DA1F2;
     --background-color:#d7d9db;
@@ -16,13 +16,34 @@ html{
 body
 {   background-color: black;
     color: white;
-    display: flex;
     width: 100vw;
     height: 100vh;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 2.8fr;
+    Font-size: 1.4rem;
+    font-family: arial !important;
+}
 
+#section2{
+    display: grid;
+    grid-template-columns: 1.12fr 1fr;
+    /* gap: 10%; */
 }
 
 ::-webkit-scrollbar{
     display: none;
+}
+
+#widgetscontainer{
+    display: flex;
+    margin-left: 10%;
+}
+@media (max-width:1020px) {
+    body{
+        grid-template-columns: 0.8fr 4fr;
+        
+    }
+    #section2{
+        grid-template-columns: 1fr;
+    }
 }

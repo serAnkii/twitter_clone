@@ -15,8 +15,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Sidebar/>
+        <div id="section2">
         {children}
+        <div id="widgetscontainer">
         <Widgets />
+        </div>
+        </div>
       </body>
     </html>
   );

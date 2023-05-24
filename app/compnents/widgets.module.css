@@ -1,5 +1,79 @@
-.widget{
-    width: 30vw;
-    border: 1px solid black;
-    height: 100vh;
+.widget {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 64%;
+  gap: 1.6rem;
+  align-items:center;
+
+  /* align-self: center; */
 }
+
+.widgetlabel {
+  background: #16181c;
+  border-radius:5rem;
+  gap: 1rem;
+  display: flex;
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  align-items: center;
+  width: 100%;
+  flex-grow: 0;
+  padding: 1.1rem;
+  }
+
+.widgetinput {
+  font-size: 2rem;
+  background: transparent;
+  outline: none;
+  color: var(--light_text);
+  border: none;
+  width: 100%;
+  outline: none;
+  margin: 0;
+}
+
+
+.containerpeople{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left:1.7rem;
+    padding-top: 1.6rem;
+    gap: 2rem;
+    background: #16181c;
+    width: 100%;
+    min-height: 10rem;
+    border-radius: 2rem;
+    color: #e7e9ea;
+  }
+ 
+  .person {
+    display: flex;
+    align-items: center;
+    /* gap: 30px; */
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .person:hover{
+    background-color: #1d1f23;
+  }
+  
+  .person img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+  
+  .person span {
+    font-size: 14px;
+    font-weight: 700;
+    color: #e7e9ea;
+  }
+  
+  @media (max-width:1020px){
+    .widget{
+      display: none;
+    }
+  }

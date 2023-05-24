@@ -1,106 +1,107 @@
-.feed{
-    width: 50vw;
-    height: 100vh;
-    border: 1px solid var(--background-color);
-    overflow-y: scroll;
+.feed {
+  /* width: 35vw; */
+  height: 100vh;
+  border: 1px solid var(--background-color);
+  overflow-y: scroll;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding: 0;
 }
 
-.feed_header{
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: transparent;
-    backdrop-filter: blur(.45rem);
-    /* background-color: var(--background-color); */
-    /* border: 1px solid var(--background-color); */
-    padding: 1.5rem 2rem;
+.feed_header {
+  width: 35vw;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  backdrop-filter: blur(0.45rem);
+  /* background-color: var(--background-color); */
+  /* border: 1px solid var(--background-color); */
+  padding: 1.5rem 2rem;
 }
 
-.tweetbox{
-    display: flex;
-    gap: 1rem;
-    padding-top:15px;
-    padding-left: 15px;
-    border-bottom:1px solid var(--background-color);
-}
-
-.tweetboxform{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-    margin-right: 1rem;
+.tweetbox {
+  display: flex;
+  gap: 1rem;
+  padding-top: 15px;
+  padding-left: 15px;
+  border-bottom: 1px solid var(--background-color);
 
 }
 
-.tweetboxforminput{
-    
-    font-size: 2rem;
-    background: transparent;
-    outline: none;
-    color: var(--light_text);
-    margin-top: 2rem;
-    border: none;
+.tweetboxform {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  margin-right: 1rem;
 }
 
-.attachments{
-    display: flex;
-    width: 100%;
-    margin-bottom: 1.5rem;
-    column-gap: 2rem;
-    align-items: center;
-
+.tweetboxforminput {
+  font-size: 2rem;
+  background: transparent;
+  outline: none;
+  color: var(--light_text);
+  margin-top: 2rem;
+  border: none;
 }
 
-.attachments input{
-    width: 6rem;
-    height: 6rem;
-
+.attachments {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  column-gap: 2rem;
+  align-items: center;
 }
 
-.attachments .tweet-button{
-    font-size: 1.8rem !important;
-    width: 20%;
-    height: 4rem;
-    border-radius: 100rem;
-    font-weight: 800;
-    text-transform: capitalize;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.attachments input {
+  width: 6rem;
+  height: 6rem;
 }
 
-
-.input_items:last-child{
-    margin-left: auto !important;
+.attachments .tweet-button {
+  font-size: 1.8rem !important;
+  width: 20%;
+  height: 4rem;
+  border-radius: 100rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.input_icons{
-    font-size: 3rem !important;
-    color: var(--twitter-color);
-    padding: 0.5rem;
+.input_items:last-child {
+  margin-left: auto !important;
 }
 
-.input_icons:hover{
-    background-color: var(--background-color2);
-    border-radius: 100rem;
-    transition: 100ms ease-in;
-    cursor: pointer;
+.input_icons {
+  font-size: 3rem !important;
+  color: var(--twitter-color);
+  padding: 0.5rem;
+}
+
+.input_icons:hover {
+  background-color: var(--background-color2);
+  border-radius: 100rem;
+  transition: 100ms ease-in;
+  cursor: pointer;
 }
 
 .tweet_button {
-    background-color: var(--twitter-color);
-    font-size: 1.8rem !important;
-    width: 20%;
-    height: 4rem;
-    border-radius: 100rem;
-    font-weight: 500;
-    text-transform: capitalize;
-    color: var(--light_text);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .tweet_button:hover {
-    background-color: rgb(26, 140, 216);
-  }
+  background-color: var(--twitter-color);
+  font-size: 1.8rem !important;
+  width: 20%;
+  height: 4rem;
+  border-radius: 100rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--light_text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border: none;
+  cursor: pointer;
+}
+
+.tweet_button:hover {
+  background-color: rgb(26, 140, 216);
+}

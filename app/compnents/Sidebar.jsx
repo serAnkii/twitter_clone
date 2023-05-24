@@ -24,7 +24,7 @@ const Sidebar = () => {
         <div className={styles.user}>
           <img src="/" alt="user" />
           <div className={styles.names}>
-            <h1>Name</h1>
+            <h1>Name</h1> 
             <h2>@Username</h2>
           </div>
         </div>
