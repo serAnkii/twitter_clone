@@ -1,21 +1,25 @@
 import Sidebaroption from "./Sidebaroption";
 import styles from "./sidebar.module.css"
-import Image from "next/image";
-const Sidebar = () => {
+import Link from "next/link";
+import {BiBell, BiHomeCircle, BiMessage} from "react-icons/bi"
+import {BsTwitter} from "react-icons/bs"
+
+const Sidebar = () =>{
   return (
     <>
       <div className={styles.sidebar} >
         <div className={styles.logo}>
-        <Image src="twitter.svg" alt="twitter logo" width={30} height={25} />
+        <Link href={"/"} className={styles.linklogo}><BsTwitter/></Link>
+        
         </div>
-        <Sidebaroption className={styles.option} text="Home" />
-        <Sidebaroption className={styles.option} text="Explore" />
-        <Sidebaroption className={styles.option} text="Notifications" />
-        <Sidebaroption className={styles.option} text="Messages" />
-        <Sidebaroption className={styles.option} text="Bookmarks" />
-        <Sidebaroption className={styles.option} text="Lists" />
-        <Sidebaroption className={styles.option} text="Profile" />
-        <Sidebaroption className={styles.option} text="More" />
+        <Sidebaroption className={styles.option} icon={<BiHomeCircle/>} text="Home" active={true}/>
+        <Sidebaroption className={styles.option} icon={<i>#</i>} text="Explore" />
+        <Sidebaroption className={styles.option} icon={<BiBell/>} text="Notifications" />
+        <Sidebaroption className={styles.option} icon={<BiMessage/>} text="Messages" />
+        <Sidebaroption className={styles.option} icon={<BiHomeCircle/>} text="Bookmarks" />
+        <Sidebaroption className={styles.option} icon={<BiHomeCircle/>} text="Lists" />
+        <Sidebaroption className={styles.option} icon={<BiHomeCircle/>} text="Profile" />
+        <Sidebaroption className={styles.option} icon={<BiHomeCircle/>} text="More" />
 
         <button variant="contained" className={styles.tweet_button} >
           Tweet

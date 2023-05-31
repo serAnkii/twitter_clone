@@ -16,7 +16,7 @@
 }
 
 .option {
-  align-items: baseline;
+  align-items: center;
   display: flex;
   padding-left: 0.5rem;
   justify-content: flex-start;
@@ -27,7 +27,8 @@
 }
 
 .option h1 {
-  font-weight: 450;
+  color: #e7e9ea;
+  font-weight: 480;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -38,18 +39,31 @@
   transition: 200ms ease-out;
 }
 
+.activeicon{
+  color: var(--twitter-color);
+}
+.active{
+  font-weight: 1000 !important;
+}
+
+.option p{
+  font-size: 3rem;
+}
 .logo {
   padding: 1rem;
-  /* font-size: 3rem ; */
+  font-size: 3rem ;
   /* border: 1px solid black; */
   color: var(--background-color);
   
 }
-
+.linklogo{
+  color: #e7e9ea;
+  text-decoration: none;
+}
 .logo:hover {
   padding: 1rem;
   border-radius: 50%;
-  background-color: var(--background-color);
+  background-color: var(--post_background);
 }
 
 .sidebaroption--active h1 {
@@ -75,6 +89,7 @@
 
 .tweet_button:hover {
   background-color: rgb(26, 140, 216);
+  
 }
 
 .user {
@@ -95,7 +110,9 @@
   transition: 200ms ease-out;
 }
 
+
 @media (max-width:1303px ) {
+  
   .sidebar h1 {
     display: none;
     padding-left: 0;
@@ -109,6 +126,6 @@
 
   .option, .tweet_button, .user , .logo{
   margin-left:auto;
-  margin-right: 1rem;
+  margin-right: auto;
   }
 }

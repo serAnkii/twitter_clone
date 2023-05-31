@@ -31,6 +31,7 @@ const Widgets = () => {
           <h2>Who to Follow</h2>
         </div>
     </div>
+    
   );
 };
 

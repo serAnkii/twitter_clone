@@ -1,10 +1,17 @@
+"use client"
+import { useState } from "react";
 import styles from "./sidebar.module.css"
 import Image from "next/image";
-const sidebaroption = ({text}) => {
+const sidebaroption = ({text,icon}) => {
+  const [active, setActive] = useState(false);
+
+  const handleClick = () => {
+    setActive(!active);
+  };
   return (
-    <div className={styles.option}>
-      <Image width={30} height={30}/>
-      <h1 className={styles.optiontext}>{text}</h1>
+    <div className={styles.option} onClick={handleClick}>
+      <p className={`${active ? styles.activeicon : ''}`}>{icon}</p>
+      <h1 className={`${styles.optiontext} ${active ? styles.active : ''}`}>{text}</h1>
     </div>
   );
 };

@@ -5,7 +5,6 @@
   width: 64%;
   gap: 1.6rem;
   align-items:center;
-
   /* align-self: center; */
 }
 
@@ -38,7 +37,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-left:1.7rem;
     padding-top: 1.6rem;
     gap: 2rem;
     background: #16181c;
@@ -46,13 +44,20 @@
     min-height: 10rem;
     border-radius: 2rem;
     color: #e7e9ea;
+    overflow: hidden;
+    transition: 0.5s ease ;
   }
  
+  .containerpeople h2{
+    margin-left: 1.7rem;
+  }
   .person {
     display: flex;
     align-items: center;
     /* gap: 30px; */
+    padding-left: 1.7rem;
     width: 100%;
+    margin-left: 0% !important;
     margin-bottom: 10px;
   }
 
@@ -72,6 +77,8 @@
     color: #e7e9ea;
   }
   
+
+
   @media (max-width:1020px){
     .widget{
       display: none;

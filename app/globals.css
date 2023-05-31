@@ -38,6 +38,16 @@ body
     display: flex;
     margin-left: 10%;
 }
+
+.messagebox{
+    border: 1px solid springgreen;
+    height: 70%;
+    width: 10rem;
+    /* position: fixed; */
+    bottom: 0;
+    align-self: center;
+    
+  }
 @media (max-width:1020px) {
     body{
         grid-template-columns: 0.8fr 4fr;
