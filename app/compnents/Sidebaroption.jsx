@@ -2,7 +2,7 @@
 import { useState } from "react";
 import styles from "./sidebar.module.css"
 import Image from "next/image";
-const sidebaroption = ({text,icon}) => {
+const Sidebaroption = ({text,icon}) => {
   const [active, setActive] = useState(false);
 
   const handleClick = () => {
@@ -16,5 +16,5 @@ const sidebaroption = ({text,icon}) => {
   );
 };
 
-export default sidebaroption;
+export default Sidebaroption;
 

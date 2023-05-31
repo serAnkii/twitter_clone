@@ -4,7 +4,7 @@ import Image from "next/image";
 const Post = () => {
   return (
     <div className={styles.post}>
-      <Image height={50} width={50} className={styles.reactions} />
+      <Image alt="img" src={"/"} height={50} width={50} className={styles.reactions} />
       <div className={styles.post__body}>
         <div className={styles.post_header}>
           <h1 className={styles.header_items}>Twitter</h1>
@@ -31,27 +31,27 @@ const Post = () => {
           <p>@Elon Musk just bought me</p>
         </div>
         <div className={styles.post_image}>
-          <Image src={"./twitter.svg"} height={337} width={504} />
+          <Image alt="img" src={"./twitter.svg"} height={337} width={504} />
         </div>
         <div className={styles.post__stats}>
           <div className={styles.post_statdiv}>
-            <Image height={10} width={10} className={styles.reactions} />
+            <Image alt="img" height={10} width={10} className={styles.reactions} />
             <p>1549</p>
           </div>
           <div className={styles.post_statdiv}>
-            <Image height={10} width={10} className={styles.reactions} />
+            <Image alt="img" height={10} width={10} className={styles.reactions} />
             <p>1549</p>
           </div>
           <div className={styles.post_statdiv}>
-            <Image height={10} width={10} className={styles.reactions} />
+            <Image alt="img" height={10} width={10} className={styles.reactions} />
             <p>1549</p>
           </div>
           <div className={styles.post_statdiv}>
-            <Image height={10} width={10} className={styles.reactions} />
+            <Image alt="img" height={10} width={10} className={styles.reactions} />
             <p>1549</p>
           </div>
           <div className={styles.post_statdiv}>
-            <Image height={10} width={10} className={styles.reactions} />
+            <Image alt="img" height={10} width={10} className={styles.reactions} />
           </div>
         </div>
       </div>
