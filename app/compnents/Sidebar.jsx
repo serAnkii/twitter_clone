@@ -3,7 +3,7 @@ import styles from "./sidebar.module.css"
 import Link from "next/link";
 import {BiBell, BiHomeCircle, BiMessage} from "react-icons/bi"
 import {BsTwitter} from "react-icons/bs"
-
+import Image from "next/image";
 const Sidebar = () =>{
   return (
     <>
@@ -26,7 +26,7 @@ const Sidebar = () =>{
         </button>
 
         <div className={styles.user}>
-          <img src="/" alt="user" />
+          <Image alt="img" width={50} height={50}/>
           <div className={styles.names}>
             <h1>Name</h1> 
             <h2>@Username</h2>
