@@ -1,7 +1,7 @@
 import Sidebaroption from "./Sidebaroption";
 import styles from "./sidebar.module.css"
 import Link from "next/link";
-import {BiBell, BiHomeCircle, BiMessage} from "react-icons/bi"
+import {BiBell, BiHomeCircle, BiMessage,BiHash,BiBookmarks,BiUser,BiDotsHorizontalRounded} from "react-icons/bi"
 import {BsTwitter} from "react-icons/bs"
 import Image from "next/image";
 const Sidebar = () =>{
@@ -10,16 +10,14 @@ const Sidebar = () =>{
       <div className={styles.sidebar} >
         <div className={styles.logo}>
         <Link href={"/"} className={styles.linklogo}><BsTwitter/></Link>
-        
         </div>
-        <Sidebaroption className={styles.option} icon={<BiHomeCircle/>} text="Home" active={true}/>
-        <Sidebaroption className={styles.option} icon={<i>#</i>} text="Explore" />
-        <Sidebaroption className={styles.option} icon={<BiBell/>} text="Notifications" />
-        <Sidebaroption className={styles.option} icon={<BiMessage/>} text="Messages" />
-        <Sidebaroption className={styles.option} icon={<BiHomeCircle/>} text="Bookmarks" />
-        <Sidebaroption className={styles.option} icon={<BiHomeCircle/>} text="Lists" />
-        <Sidebaroption className={styles.option} icon={<BiHomeCircle/>} text="Profile" />
-        <Sidebaroption className={styles.option} icon={<BiHomeCircle/>} text="More" />
+        <Sidebaroption className={styles.option} icon={<BiHomeCircle/>} text="home" linkid="/" active={true}/>
+        <Sidebaroption className={styles.option} icon={<BiHash/>} text="explore" linkid="explore"/>
+        <Sidebaroption className={styles.option} icon={<BiBell/>} text="notifications" linkid="notifications"/>
+        <Sidebaroption className={styles.option} icon={<BiMessage/>} text="messages" linkid="messages"/>
+        <Sidebaroption className={styles.option} icon={<BiBookmarks/>} text="bookmarks" linkid="bookmarks"/>
+        <Sidebaroption className={styles.option} icon={<BiUser/>} text="profile" linkid="profile"/>
+        <Sidebaroption className={styles.option} icon={<BiDotsHorizontalRounded/>} text="more" linkid="more"/>
 
         <button variant="contained" className={styles.tweet_button} >
           Tweet

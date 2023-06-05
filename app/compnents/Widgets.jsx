@@ -1,11 +1,11 @@
 import styles from "./widgets.module.css";
-
+import { BsSearch } from "react-icons/bs";
 import Link from "next/link";
 const Widgets = () => {
   return (
     <div className={styles.widget}>
       <label className={styles.widgetlabel}>
-        Search
+        <BsSearch/>
         <input
           type="text"
           placeholder="Search Twitter"

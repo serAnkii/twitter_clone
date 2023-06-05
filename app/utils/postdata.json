@@ -1,0 +1,24 @@
+[
+    {
+        "postedAt":1651964202500,
+        "body":"this is a sample post 1",
+        "likes":[],
+        "user":{
+            "id":"0239748812039214",
+            "name":"temp user1",
+            "nickname":"ankit",
+            "image":"https://unsplash.com/photos/1LLh8k2_YFk"
+        }
+    },
+    {
+        "postedAt":1651964202530,
+        "body":"this is a sample post 2",
+        "likes":[],
+        "user":{
+            "id":"02397482589039214",
+            "name":"temp user2",
+            "nickname":"ankit2",
+            "image":"https://unsplash.com/photos/1LLh8k2_YFk"
+        }
+    }
+]

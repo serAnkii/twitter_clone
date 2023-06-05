@@ -47,7 +47,17 @@ body
     bottom: 0;
     align-self: center;
     
-  }
+}
+
+.dynamicdiv{
+    height: 100vh;
+    border: 1px solid var(--background-color);
+    overflow-y: scroll;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0;
+}
+
 @media (max-width:1020px) {
     body{
         grid-template-columns: 0.8fr 4fr;

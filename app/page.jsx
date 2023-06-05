@@ -9,7 +9,7 @@ export default function Home() {
         <div className={styles.feed_header}>
           <h1>Home</h1>
         </div>
-        <TweetBox />
+        <TweetBox/>
       </div>
     </>
   );

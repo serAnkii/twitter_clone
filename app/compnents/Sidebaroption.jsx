@@ -1,8 +1,9 @@
-"use client"
+"use client";
 import { useState } from "react";
-import styles from "./sidebar.module.css"
+import styles from "./sidebar.module.css";
 import Image from "next/image";
-const Sidebaroption = ({text,icon}) => {
+import Link from "next/link";
+const Sidebaroption = ({ text, icon,linkid }) => {
   const [active, setActive] = useState(false);
 
   const handleClick = () => {
@@ -10,11 +11,12 @@ const Sidebaroption = ({text,icon}) => {
   };
   return (
     <div className={styles.option} onClick={handleClick}>
-      <p className={`${active ? styles.activeicon : ''}`}>{icon}</p>
-      <h1 className={`${styles.optiontext} ${active ? styles.active : ''}`}>{text}</h1>
+      <p className={`${active ? styles.activeicon : ""}`}>{icon}</p>
+      <Link className={styles.optionlinktext} href={`/${linkid}`}>
+        {text}
+      </Link>
     </div>
   );
 };
 
 export default Sidebaroption;
-
