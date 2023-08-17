@@ -1,6 +1,7 @@
 import styles from "./widgets.module.css";
 import { BsSearch } from "react-icons/bs";
 import Link from "next/link";
+import Message from "./Message";
 const Widgets = () => {
   return (
     <div className={styles.widget}>
@@ -30,6 +31,7 @@ const Widgets = () => {
       <div className={styles.containerpeople}>
           <h2>Who to Follow</h2>
         </div>
+      <Message/>
     </div>
     
   );

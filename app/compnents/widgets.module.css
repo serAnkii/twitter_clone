@@ -5,6 +5,7 @@
   width: 64%;
   gap: 1.6rem;
   align-items:center;
+  position: relative;
   /* align-self: center; */
 }
 

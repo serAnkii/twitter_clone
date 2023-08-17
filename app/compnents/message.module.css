@@ -1,0 +1,45 @@
+.maindiv{
+    display: flex;
+    border:1px solid var(--background-color);
+    position: absolute;
+    z-index: 100000;
+    height: 60%;
+    width: 150%;
+    right: -12rem;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.bottom1{
+    bottom: -40rem;
+
+}
+
+.bottom10{
+    bottom: -1rem;
+}
+
+.header{
+    display: flex !important;
+    justify-content: space-between !important;
+    width: 100%;
+}
+
+.mainheading{
+    color: var(--twitter-color);
+    margin: 1rem;
+    height: fit-content;
+}
+
+.updown{
+    width: 6rem;
+    height: fit-content;
+    font-size: 3rem;
+    margin: 1rem;
+    background: transparent;
+    color: var(--background-color);
+    box-shadow: 2px 2px 3px var(--background-color);
+    
+}

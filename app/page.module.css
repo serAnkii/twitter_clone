@@ -1,6 +1,7 @@
 .feed {
   /* width: 35vw; */
   height: 100vh;
+  overflow: hidden;
   border: 1px solid var(--background-color);
   overflow-y: scroll;
   flex-grow: 0;

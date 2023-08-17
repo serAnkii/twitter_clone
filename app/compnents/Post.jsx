@@ -28,7 +28,8 @@ const Post = () => {
           <h3 className={styles.header_items}>...</h3>
         </div>
         <div className={styles.post__text}>
-          <p>@Elon Musk just bought me</p>
+          <p>Renaming from twitter to x</p>
+          
         </div>
         <div className={styles.post_image}>
           <Image alt="img" src={"./twitter.svg"} height={337} width={504} />
