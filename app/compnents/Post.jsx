@@ -4,7 +4,7 @@ import Image from "next/image";
 const Post = () => {
   return (
     <div className={styles.post}>
-      <Image alt="img" src={"/"} height={50} width={50} className={styles.reactions} />
+      <Image alt="img" src="/dummy-image.jpg" height={50} width={50} className={styles.reactions} />
       <div className={styles.post__body}>
         <div className={styles.post_header}>
           <h1 className={styles.header_items}>Twitter</h1>

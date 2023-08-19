@@ -17,14 +17,13 @@ const Sidebar = () =>{
         <Sidebaroption className={styles.option} icon={<BiMessage/>} text="messages" linkid="messages"/>
         <Sidebaroption className={styles.option} icon={<BiBookmarks/>} text="bookmarks" linkid="bookmarks"/>
         <Sidebaroption className={styles.option} icon={<BiUser/>} text="profile" linkid="profile"/>
-        <Sidebaroption className={styles.option} icon={<BiDotsHorizontalRounded/>} text="more" linkid="more"/>
 
         <button variant="contained" className={styles.tweet_button} >
           Tweet
         </button>
 
         <div className={styles.user}>
-          <Image alt="img" width={50} height={50}/>
+          <Image src="/dummy-image.jpg" alt="img" width={50} height={50} style={{borderRadius:"50%"}}/>
           <div className={styles.names}>
             <h1>Name</h1> 
             <h2>@Username</h2>

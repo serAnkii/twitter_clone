@@ -18,7 +18,7 @@ const TweetBox = () => {
   return (
     <div className={styles.tweetbox}>
       
-      <Image height={50} width={50} style={{border:"1px solid white",borderRadius:"50%"}}></Image>
+      <Image height={50} width={50} style={{border:"1px solid white",borderRadius:"50%"}} src="/dummy-image.jpg"></Image>
       <form className={styles.tweetboxform} >
         <input  type="text" placeholder="What's happening?!" className={styles.tweetboxforminput}/>
         <input type='button' />
