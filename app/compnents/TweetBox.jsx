@@ -1,13 +1,9 @@
 "use client"
 import { useEffect } from 'react';
-import dbConnect from "../utils/db.js";
 import styles from "../page.module.css"
 import Image from "next/image";
 const TweetBox = () => {
   
-  useEffect(() => {
-    dbConnect();
-  }, []);
   
   
   async function handleSubmit(){
