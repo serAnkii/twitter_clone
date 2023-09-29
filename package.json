@@ -9,13 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "dotenv": "^16.1.4",
-    "eslint": "8.40.0",
-    "eslint-config-next": "13.4.2",
-    "mongoose": "^7.2.2",
-    "next": "13.4.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-icons": "^4.8.0"
+    "@supabase/auth-helpers-nextjs": "^0.8.1",
+    "@supabase/supabase-js": "^2.36.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.279.0",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-icons": "^4.11.0",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "postcss": "latest",
+    "supabase": "^1.99.5",
+    "tailwindcss": "latest",
+    "typescript": "latest"
   }
 }
