@@ -6,6 +6,8 @@ import { redirect, useRouter } from "next/navigation";
 import { Router } from "next/router";
 import { useState } from "react";
 
+export const revalidate = 0
+
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -54,7 +56,7 @@ export default function Login() {
 
   return (
     <>
-      <div className="bg-black h-screen w-screen flex  flex-col">
+      <div className="bg-black h-screen w-screen flex  flex-col absolute left-0 z-50">
         <h1 className="text-[5vw] w-screen text-center font-bold text-twitter">Welcome To the Twitter but Better</h1>
         <div className="flex">
         <div className="h-screen w-[50%] justify-center items-center flex flex-col gap-4">
