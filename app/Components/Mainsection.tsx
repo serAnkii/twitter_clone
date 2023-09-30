@@ -1,7 +1,7 @@
 
 import "@/app/globals.css"
 
-import Composetweet from "./Server-components/Composetweet";
+// import Composetweet from "./Server-components/Composetweet";
 import Tweets from "@/app/Components/Client-components/Tweets"
 import { Signout } from "../login/page";
 
@@ -16,7 +16,7 @@ const Mainsection = async () => {
         <Signout/>
       </div>
       <div className="border-t-[0.5px] px-4 border-b-[0.5px] flex items-stretch py-6 space-x-2 border-gray-600 relative z-[0]">
-        <Composetweet />
+        {/* <Composetweet /> */}
 
       </div>
       <div className="w-full h-fit flex flex-col space-y-11 items-center">
