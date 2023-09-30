@@ -5,8 +5,9 @@ import { Database } from "@/lib/database.types";
 import { randomUUID } from "crypto";
 import {toast} from "sonner"
 import { error } from "console";
+import { revalidatePath } from "next/cache";
 
-let err = undefined; 
+
 
 const Composetweet = () => {
   async function submit(Formdata: FormData) {
@@ -19,14 +20,16 @@ const Composetweet = () => {
       return;
     }
 
+    
+
     const supabase = createServerComponentClient<Database>({ cookies });
     
     const {data,error} = await supabase
       .from("tweets")
-      .insert({ id:randomUUID(), text: tweet.toString() } as any);
+      .insert({ text: tweet.toString() } as any);
     
-        err = error;
     
+      
     }
 
 
@@ -57,4 +60,3 @@ const Composetweet = () => {
 
 export default Composetweet;
 
-export {err};

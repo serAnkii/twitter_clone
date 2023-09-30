@@ -20,12 +20,14 @@
     "react-icons": "^4.11.0",
     "sonner": "^1.0.3",
     "tailwind-merge": "^1.14.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/uuid": "^9.0.4",
     "autoprefixer": "latest",
     "postcss": "latest",
     "supabase": "^1.99.5",

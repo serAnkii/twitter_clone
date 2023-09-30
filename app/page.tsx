@@ -7,18 +7,17 @@ import type { Database } from '@/lib/database.types'
 import { redirect } from "next/navigation";
 
 export const dynamic = 'force-dynamic'
-
 const page = async () => {
-  // const supabase = createServerComponentClient<Database>({ cookies })
+  const supabase = createServerComponentClient<Database>({ cookies })
   
-  // const {data,error} =  await supabase.auth.getUser();
+  const {data,error} =  await supabase.auth.getUser();
 
   // console.log({data,error});
 
-  // if(error?.status==401)
-  // {
-  //   redirect("/login")
-  // }
+  if(error?.status==401)
+  {
+      redirect("/login")
+  }
   
 
   return (
