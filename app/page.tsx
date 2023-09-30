@@ -6,7 +6,7 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import type { Database } from '@/lib/database.types'
 import { redirect } from "next/navigation";
 
-export const dynamic = 'force-dynamic'
+
 const page = async () => {
   const supabase = createServerComponentClient<Database>({ cookies })
   

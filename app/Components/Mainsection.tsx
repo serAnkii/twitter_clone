@@ -2,21 +2,12 @@
 import "@/app/globals.css"
 
 import Composetweet from "./Server-components/Composetweet";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
-import { Database } from "@/lib/database.types";
 import Tweets from "@/app/Components/Client-components/Tweets"
 import { Signout } from "../login/page";
 
 const Mainsection = async () => {
   
-  
-  const supabase = createServerComponentClient<Database>({cookies})
-
-  const { data, error } = await supabase
-  .from('tweets')
-  .select();
-
+ 
 
   return (
     <main className="h-full w-[50%] overflow-scroll max-md:w-[100%] border-l-[0.5px] border-r-[0.5px] border-gray-600 overflow-x-hidden">
