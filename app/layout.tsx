@@ -7,7 +7,8 @@ import Rightsection from "./Components/Rightsection";
 const inter = Inter({ subsets: ["latin"] });
 import { headers } from 'next/headers';
 
-export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: "Twitter Clone",
   description: "Twitter But Better",

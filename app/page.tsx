@@ -19,7 +19,6 @@ const page = async () => {
     redirect("./login")
   }
   
-
   
 
   return (
