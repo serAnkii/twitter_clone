@@ -7,9 +7,9 @@ import { Router } from "next/router";
 import { useState } from "react";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [uname, changeUname] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [uname, changeUname] = useState('');
   const router = useRouter();
 
   const supabase = createClientComponentClient<Database>();
@@ -47,13 +47,10 @@ export default function Login() {
 
     if (error) {
       window.alert(error);
-      return;
+      // return;
     }
-
-    router.push("/");
+    router.push(location.origin);
   }
-
-  console.log(supabase.auth.getUser());
 
   return (
     <>
@@ -62,7 +59,7 @@ export default function Login() {
         <div className="flex">
         <div className="h-screen w-[50%] justify-center items-center flex flex-col gap-4">
           <h1>LOGIN</h1>
-          <form className="justify-center items-center flex flex-col gap-5">
+          <form onSubmit={(e)=>e.preventDefault()} className="justify-center items-center flex flex-col gap-5">
             <input
               name="email"
               className="text-slate-950 rounded-xl text-center"
@@ -87,7 +84,7 @@ export default function Login() {
         </div>
         <div className="h-screen w-[50%] justify-center items-center flex flex-col gap-4">
           <h1>SIGN_UP</h1>
-          <form className="justify-center items-center flex flex-col gap-5">
+          <form onSubmit={e=>e.preventDefault()} className="justify-center items-center flex flex-col gap-5">
             <input
               name="email"
               className="text-slate-950 rounded-xl text-center"
@@ -119,7 +116,7 @@ export default function Login() {
             </button>
           </form>
         </div>
-        </div>
+        </div> 
       </div>
     </>
   );

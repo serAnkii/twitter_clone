@@ -3,7 +3,7 @@ import { BsSearch } from "react-icons/bs";
 
 const Rightsection = () => {
   return (
-    <div className="h-screen w-[31.5%] flex flex-col space-y-4 pt-1 pr-5 overflow-scroll max-md:hidden">
+    <div className="h-screen w-[31.5%] flex flex-col overflow-x-hidden space-y-4 pt-1 pr-5 overflow-scroll max-md:hidden ">
     
       <div className="relative w-full h-[6%] rounded-3xl bg-[#202327] ml-5">
         <label

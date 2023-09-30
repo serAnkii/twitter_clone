@@ -6,6 +6,7 @@ import { randomUUID } from "crypto";
 import {toast} from "sonner"
 import { error } from "console";
 import { revalidatePath } from "next/cache";
+import Form from "../Client-components/Form";
 
 
 
@@ -14,7 +15,10 @@ const Composetweet = () => {
     "use server";
 
     const tweet = Formdata.get("tweet");
-    console.log(tweet);
+
+    
+    
+    
 
     if (!tweet) {
       return;
@@ -22,38 +26,33 @@ const Composetweet = () => {
 
     
 
-    const supabase = createServerComponentClient<Database>({ cookies });
-    
+    const supabase =  createServerComponentClient<Database>({ cookies });
+    const username = (await supabase.auth.getSession()).data.session?.user.user_metadata.username;
+    const pfpid = (await supabase.auth.getSession()).data.session?.user.id
     const {data,error} = await supabase
       .from("tweets")
-      .insert({ text: tweet.toString() } as any);
+      .insert({
+        id:randomUUID(),
+        text: tweet.toString(),
+        created_by:username,
+        profile_id:pfpid,
+        
+        } as any);
     
-    
+      if (error) {
+        console.error("Error submitting tweet:", error);
+        return;
       
+      }
+
     }
 
-
+    
     
 
   return (
     <form action={submit} className="flex flex-col w-full h-full">
-      <input
-        type="text"
-        name="tweet"
-        className="w-full h-full text-2xl placeholder:text-gray-600 bg-transparent border-b-[0.5px] border-gray-600 p-4 outline-none border-none"
-        placeholder="What's happening?"
-      />
-      <div className="w-full justify-between items-center flex">
-        <div></div>
-        <div className="w-full max-w-[100px]">
-          <button
-            type="submit"
-            className="rounded-full bg-twitterColor px-4 py-2 w-full text-lg text-center hover:bg-opacity-70 transition duration-200 font-bold bg-twitter"
-          >
-            Tweet
-          </button>
-        </div>
-      </div>
+     <Form />
     </form>
   );
 };

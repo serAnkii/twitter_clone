@@ -194,6 +194,7 @@ export interface Database {
       tweets: {
         Row: {
           created_at: string | null
+          created_by: string | null
           id: string
           profile_id: string | null
           text: string
@@ -201,6 +202,7 @@ export interface Database {
         }
         Insert: {
           created_at?: string | null
+          created_by?: string | null
           id: string
           profile_id?: string | null
           text: string
@@ -208,6 +210,7 @@ export interface Database {
         }
         Update: {
           created_at?: string | null
+          created_by?: string | null
           id?: string
           profile_id?: string | null
           text?: string
