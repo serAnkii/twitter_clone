@@ -9,7 +9,7 @@ import {
 } from "react-icons/bs";
 import { HiOutlineHashtag } from "react-icons/hi";
 import { HiEnvelope } from "react-icons/hi2";
-import { cookies, headers } from "next/headers";
+// import { cookies, headers } from "next/headers";
 import Link from "next/link";
 
 import "@/app/globals.css";
