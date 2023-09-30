@@ -64,7 +64,9 @@ export default async function Login() {
   return (
     <>
       <div className="bg-black h-screen w-screen flex  flex-col z-50 left-0 absolute">
-        <h1 className="text-[5vw] w-screen text-center font-bold text-twitter">Welcome To the Twitter but Better</h1>
+        <h1 className="text-[2vw] w-screen text-center font-bold text-twitter">This Functionality is not working correctly on deployment environment.Whereas it is working fine on Local Environment.If anyone knows any fix</h1>
+        <a href="https://portfolio-website-xi-fawn.vercel.app/#contactdiv" className="text-purple-600 text-center"> Find me here</a>
+
         <div className="flex">
         <div className="h-screen w-[50%] justify-center items-center flex flex-col gap-4">
           <h1>LOGIN</h1>
