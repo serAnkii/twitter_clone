@@ -14,10 +14,11 @@ const page = async () => {
 
   // console.log({data,error});
 
-  if(error?.status==401)
+  if(data.user?.id==null)
   {
-      redirect("/login")
+    redirect("./login")
   }
+  
   
   
 

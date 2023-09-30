@@ -6,13 +6,20 @@ import { redirect, useRouter } from "next/navigation";
 import { Router } from "next/router";
 import { useState } from "react";
 
-export default function Login() {
+export default async function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [uname, changeUname] = useState('');
   const router = useRouter();
 
   const supabase = createClientComponentClient<Database>();
+
+  const status = await supabase.auth.getSession()
+
+  if(status.data.session?.user.id!=null)
+  {
+    router.push(location.origin)
+  }
 
   async function handleSignUp() {
     const { data, error } = await supabase.auth.signUp({
@@ -52,9 +59,11 @@ export default function Login() {
     router.push(location.origin);
   }
 
+
+
   return (
     <>
-      <div className="bg-black h-screen w-screen flex  flex-col">
+      <div className="bg-black h-screen w-screen flex  flex-col z-50 left-0 absolute">
         <h1 className="text-[5vw] w-screen text-center font-bold text-twitter">Welcome To the Twitter but Better</h1>
         <div className="flex">
         <div className="h-screen w-[50%] justify-center items-center flex flex-col gap-4">
