@@ -15,7 +15,6 @@
 
 
 # Future Scope 
-- to add like tweets functionality and reply as well
 - create a option to add images in tweets
 - messaging service with supabase real time changes in postgress schema.
 
