@@ -1,13 +1,12 @@
 // tailwind.config.js
 
-
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   theme: {
     container: {
@@ -16,13 +15,17 @@ module.exports = {
       screens: {
         "2xl": "1400px",
       },
-    
     },
-    
+
     extend: {
-      colors:{
-        twitter:"#1a8cd8"
-      }
+      gridTemplateRows: {
+        '8': "1fr 3fr 2fr",
+      },
+
+      colors: {
+        twitter: "#1a8cd8",
+      },
+
       // Other Tailwind CSS configuration...
     },
   },

@@ -13,3 +13,28 @@ body{
 ::-webkit-scrollbar{
   display: none;
 }
+
+#sign-in{
+  display: grid;
+  grid-template-rows: 0.5fr 4fr 1fr;
+  gap: 1rem;
+}
+
+#sign-up{
+  display: grid;
+  grid-template-rows: 0.5fr 4fr 1fr;
+  gap: 1rem;
+}
+
+input{
+  padding: 1rem;
+  font-size: 20px;
+}
+
+#mainloginpage{
+  background: url('/bgtwitterlogin.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}

@@ -1,15 +1,15 @@
-'use client'
+
 import Sidebar from "@/app/Components/Sidebar";
 import Mainsection from "@/app/Components/Mainsection";
 import Rightsection from "./Components/Rightsection";
-// import { cookies } from 'next/headers'
-import { createClientComponentClient, createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import { cookies } from 'next/headers'
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import type { Database } from '@/lib/database.types'
 import { redirect } from "next/navigation";
 
 
 const page = async () => {
-  const supabase = createClientComponentClient<Database>()
+  const supabase = createServerComponentClient<Database>({ cookies })
   
   const {data,error} =  await supabase.auth.getUser();
 

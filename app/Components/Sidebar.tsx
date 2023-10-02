@@ -9,7 +9,7 @@ import {
 } from "react-icons/bs";
 import { HiOutlineHashtag } from "react-icons/hi";
 import { HiEnvelope } from "react-icons/hi2";
-// import { cookies, headers } from "next/headers";
+import { cookies, headers } from "next/headers";
 import Link from "next/link";
 
 import "@/app/globals.css";
@@ -51,9 +51,9 @@ const NAV = [
 ];
 
 const Sidebar = async () => {
-  // const supabase = createServerComponentClient({ cookies });
+  const supabase = createServerComponentClient({ cookies });
 
-  // const { data, error } = await supabase.auth.getUser();
+  const { data, error } = await supabase.auth.getUser();
 
   return (
     <div className="h-full w-[20.5%] flex flex-col justify-between items-start pb-1 relative">
@@ -80,7 +80,7 @@ const Sidebar = async () => {
               <div className="flex items-center justify-center gap-4">
                 <h1 className="text-xl font-bold ">Signed-in as:</h1>
                 <h1 className="text-2xl font-serif capitalize text-twitter font-bold ">
-                  {/* {data.user?.user_metadata.username} */}
+                  {data.user?.user_metadata.username}
                 </h1>
               </div>
               

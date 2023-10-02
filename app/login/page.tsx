@@ -1,17 +1,18 @@
-'use client'
+"use client";
+import "@/app/globals.css"
+import { toast } from "sonner";
 
 import { Database } from "@/lib/database.types";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import { redirect, useRouter } from "next/navigation";
-import { Router } from "next/router";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export const revalidate = 0
+export const revalidate = 0;
 
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [uname, changeUname] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [uname, changeUname] = useState("");
   const router = useRouter();
 
   const supabase = createClientComponentClient<Database>();
@@ -25,17 +26,25 @@ export default function Login() {
       },
     });
 
+
     if (error) {
-      window.alert(error.message);
+      toast.error(error.message)
       return;
     } else {
-      window.alert("user Created sucessfully");
+      toast.success("user Created sucessfully , Please Login");
     }
 
+    // const {data:udata,error:err}  = await supabase.from("profiles").select().eq('username',uname.trim())
+
+    // if(udata){
+    //   window.alert("username taken ,please choose another")
+    //   return
+    // }
+    
     // Create a corresponding record in the 'profiles' table
     await supabase.from("profiles").upsert({
       id: data?.session?.user.id,
-      username: data.user?.user_metadata.username,
+      username: uname,
     } as any);
   }
 
@@ -48,77 +57,94 @@ export default function Login() {
     });
 
     if (error) {
-      window.alert(error);
-      // return;
+      toast.error(error.message);
+      return;
     }
+    else{
+    toast.loading("Logging In")
     router.push(location.origin);
+    router.refresh()
+    }
   }
 
   return (
     <>
-      <div className="bg-black h-screen w-screen flex  flex-col absolute left-0 z-50">
-        <h1 className="text-[5vw] w-screen text-center font-bold text-twitter">Welcome To the Twitter but Better</h1>
-        <div className="flex">
-        <div className="h-screen w-[50%] justify-center items-center flex flex-col gap-4">
-          <h1>LOGIN</h1>
-          <form onSubmit={(e)=>e.preventDefault()} className="justify-center items-center flex flex-col gap-5">
-            <input
-              name="email"
-              className="text-slate-950 rounded-xl text-center"
-              placeholder="Enter a vaid email"
-              required
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              className="text-slate-950 rounded-xl text-center"
-              placeholder="Enter a strong Password"
-              type="password"
-              name="password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
+      <div id="mainloginpage" className="bg-black h-screen w-screen flex  flex-col absolute left-0 z-50">
+        <h1 className="text-[5vw] w-screen text-center font-bold text-twitter">
+          Twitter <span className="text-pink-600"> X</span>{" "}
+        </h1>
+        <div  className="flex w-screen h-[70%] ">
+          <div id="sign-in" className="w-[50%] p-4 h-[100%] m-2  ">
+            <h1 className="text-4xl text-center tracking-[0.5rem] w-100%">LOGIN</h1>
+            
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className=" flex flex-col justify-center items-center gap-10"
+            >
+              <input
+                name="email"
+                className="text-slate-950 rounded-xl text-center"
+                placeholder="Enter a vaid email"
+                required
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                className="text-slate-950 rounded-xl text-center"
+                placeholder="Enter a strong Password"
+                type="password"
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </form>
+            <div className="flex justify-center items-center">
             <button
               onClick={handleLogIn}
-              className=" bg-twitter p-3 rounded-xl"
+              className=" bg-twitter text-3xl font-bold w-[40%] h-[70%] rounded-full hover:scale-105 transition-all duration-200"
             >
               Sign-in
             </button>
-          </form>
-        </div>
-        <div className="h-screen w-[50%] justify-center items-center flex flex-col gap-4">
-          <h1>SIGN_UP</h1>
-          <form onSubmit={e=>e.preventDefault()} className="justify-center items-center flex flex-col gap-5">
-            <input
-              name="email"
-              className="text-slate-950 rounded-xl text-center"
-              placeholder="Enter a vaid email"
-              required
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              className="text-slate-950 rounded-xl text-center"
-              placeholder="Enter a strong Password"
-              type="password"
-              name="password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            </div>
+          </div>
 
-            <input
-              className="text-slate-950 rounded-xl text-center"
-              placeholder="Enter your username"
-              type="text"
-              name="uname"
-              onChange={(e) => changeUname(e.target.value)}
-            />
+          <div id="sign-up" className="w-[50%] p-4 h-[100%]">
+            <h1 className="text-4xl tracking-[0.5rem] text-center w-[100%]">SIGN UP</h1>
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="flex flex-col gap-4 justify-center items-center"
+            >
+              <input
+                name="email"
+                className="text-slate-950 rounded-xl text-center"
+                placeholder="Enter a vaid email"
+                required
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                className="text-slate-950 rounded-xl text-center"
+                placeholder="Enter a strong Password"
+                type="password"
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
 
+              <input
+                className="text-slate-950 rounded-xl text-center"
+                placeholder="Enter your username"
+                type="text"
+                name="uname"
+                onChange={(e) => changeUname(e.target.value)}
+              />
+            </form>
+            <div className="flex justify-center items-center">
             <button
               onClick={handleSignUp}
-              className="bg-twitter p-3 rounded-xl"
+              className=" bg-twitter text-3xl font-bold w-[40%] h-[70%] rounded-full hover:scale-105 transition-all duration-200"
             >
               Sign-up
             </button>
-          </form>
+            </div>
+          </div>
         </div>
-        </div> 
       </div>
     </>
   );
@@ -132,10 +158,14 @@ export const Signout = async () => {
     const { error } = await supabase.auth.signOut();
 
     if (error) {
-      window.alert(error.message);
+      toast.error(error.message);
       return;
     }
+    else{
+    toast.success("SIGNED OUT")
     router.push("/login");
+    router.refresh();
+    }
   }
 
   return (
