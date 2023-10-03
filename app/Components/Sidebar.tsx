@@ -1,3 +1,4 @@
+"use server"
 import React from "react";
 import { BiHomeCircle, BiUser } from "react-icons/bi";
 import {

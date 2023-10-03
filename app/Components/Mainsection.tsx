@@ -1,4 +1,4 @@
-
+"use server"
 import "@/app/globals.css"
 
 import Composetweet from "./Server-components/Composetweet";

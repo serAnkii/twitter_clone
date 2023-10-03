@@ -1,3 +1,4 @@
+"use server"
 
 import Sidebar from "@/app/Components/Sidebar";
 import Mainsection from "@/app/Components/Mainsection";

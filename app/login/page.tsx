@@ -1,3 +1,4 @@
+"use server"
 import "@/app/globals.css";
 
 export default function Login() {
