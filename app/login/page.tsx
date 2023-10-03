@@ -1,7 +1,6 @@
-"use server"
 import "@/app/globals.css";
 
-export default function Login() {
+export default  function Login() {
   return (
     <>
       <div
