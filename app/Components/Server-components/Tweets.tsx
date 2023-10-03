@@ -1,9 +1,9 @@
 "use server";
 import { createClient } from "@supabase/supabase-js";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import Likebutton from "./Likebutton";
+import Likebutton from "../Client-components/Likebutton";
 import { cookies } from "next/headers";
-import Likecount from "../Server-components/Likecount";
+import Likecount from "./Likecount";
 
 const supabase = createServerComponentClient({cookies})
 
@@ -47,7 +47,7 @@ const Tweets = async () => {
               Created at : {e.created_at}
             </h1>
             <div className="flex justify-around">
-              <div className="flex gap-3"><Likebutton tweetid={e.id } uname={uname} uid={uid!} /> <h1 className="text-xl"><Likecount t={e.id}/></h1> </div>
+              <div className="flex gap-3"><Likebutton tweetid={e.id } uname={uname} uid={uid!} /> <Likecount t={e.id}/> </div>
               <button>bookmark</button>
             </div>
           </div>

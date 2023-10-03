@@ -16,13 +16,13 @@ body{
 
 #sign-in{
   display: grid;
-  grid-template-rows: 0.5fr 4fr 1fr;
+  grid-template-rows: 0.7fr 4fr;
   gap: 1rem;
 }
 
 #sign-up{
   display: grid;
-  grid-template-rows: 0.5fr 4fr 1fr;
+  grid-template-rows: 0.7fr 4fr;
   gap: 1rem;
 }
 
@@ -37,4 +37,15 @@ input{
   background-size: cover;
   background-repeat: no-repeat;
   
+}
+
+#from_signup{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+
+#form-signin{
+  display: grid;
+  grid-template-rows:1fr 1fr 1fr;
 }

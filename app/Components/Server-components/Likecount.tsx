@@ -27,8 +27,3 @@ const Likecount = async ({t}:likecountprop) => {
 
 export default Likecount
 
-
-
-
-
-
