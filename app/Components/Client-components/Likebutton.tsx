@@ -2,10 +2,8 @@
 
 import { useTransition } from "react";
 import { likes } from "@/utility/helpers";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { BiBookmark, BiLike } from "react-icons/bi";
-import {useState,useEffect} from "react"
-import { isliked } from "../Server-components/Likecount";
+
 
 type Likebuttonprops = {
   tweetid: string;
