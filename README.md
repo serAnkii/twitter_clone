@@ -6,10 +6,11 @@
 - Next.js (with latest server actions used.)
 - Supabse (data fetching using server actions and supabase Authentication)
 - tailwind Css
-- type-script
+- typeScript
 
 #Visuals 
-- ![image](https://github.com/serAnkii/twitter_clone/assets/89020930/5e6840e4-216d-444c-beae-6ea1f11eadea)
+- ![image](https://github.com/serAnkii/twitter_clone/assets/89020930/d6eef3ca-a351-480f-8dee-d42ac7c4efbe)
+
   
 - ![image](https://github.com/serAnkii/twitter_clone/assets/89020930/bbc8c941-0fa7-4eb4-92ac-ef462dfff6ab)
 
