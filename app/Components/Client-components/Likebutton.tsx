@@ -1,8 +1,10 @@
 "use client";
 
 import { useTransition } from "react";
-import { likes } from "@/utility/helpers";
+import {  likes } from "@/utility/helpers";
 import { BiBookmark, BiLike } from "react-icons/bi";
+import {useState , useEffect} from "react"
+// import Buttontype from "../Server-components/Buttontype";
 
 
 type Likebuttonprops = {
@@ -12,22 +14,10 @@ type Likebuttonprops = {
 };
 
 
-const Likebutton = ({ tweetid, uname, uid }: Likebuttonprops) => {
+const Likebutton =  ({ tweetid, uname, uid }: Likebuttonprops) => {
   const [ispending, startTransition] = useTransition();
-  // const [userLiked, setUserLiked] = useState(false);
+  const [userLiked, setUserLiked] = useState(false);
 
-  // useEffect(() => {
-  //   // Check if the user has liked the tweet
-  //   const checkLiked = () => {
-  //     isliked({ t: tweetid, uid })
-  //       .then((liked) => setUserLiked(liked))
-  //       .catch((error) => console.error("Error checking liked status:", error));
-  //   };
-
-  //   checkLiked();
-  // }, [tweetid, uid]);
-
-// const isliked = await isLiked(tweetid,is)
   return (
     <div>
       <button
@@ -40,9 +30,10 @@ const Likebutton = ({ tweetid, uname, uid }: Likebuttonprops) => {
               uname,
             });
           });
+          
         }}
       >
-        <BiLike className="text-2xl hover:fill-pink-600  "/> {}
+        <BiLike/>
       </button>
     </div>
   );
