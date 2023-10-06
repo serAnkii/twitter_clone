@@ -29,12 +29,12 @@ export default function RootLayout({
 
 
   return (
-    <html lang="en">
+    <html lang="en" >
       <Toaster position="bottom-center" richColors theme="dark" />
 
       <body className="relative h-screen w-screen overflow-hidden" >
         <div className="h-full w-[100vw] bg-black flex justify-around items-center">
-          <div className="w-[80vw] h-screen flex">
+          <div className="w-[80vw] h-screen flex ">
             <Sidebar />
             {children} 
             <Rightsection />

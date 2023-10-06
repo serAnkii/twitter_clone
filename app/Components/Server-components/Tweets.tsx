@@ -4,6 +4,8 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import Likebutton from "../Client-components/Likebutton";
 import { cookies } from "next/headers";
 import Likecount from "./Likecount";
+import { revalidatePath } from "next/cache";
+import { Commentbutton } from "../Client-components/CommentButton";
 
 const supabase = createServerComponentClient({cookies})
 
@@ -31,13 +33,15 @@ const Tweets = async () => {
 
   data?.reverse();
 
+
   
+
 
 
   return (
     <div>
-      {data?.map((e) => (
-        <>
+      {data?.map((e,index) => (
+        <div>
           <div className=" border-2 border-solid border-[#2f3336] h-[fit-content] w-[39.5vw] hover:bg-[#080808] p-4 flex flex-col gap-y-6 ">
             <h1 className="font-serif font-bold text-xl">
               <span className="text-twitter"> @ {e.created_by}</span> Tweeted
@@ -51,9 +55,11 @@ const Tweets = async () => {
             <div className="flex justify-around">
               <div className="flex gap-3"><Likebutton tweetid={e.id } uname={uname} uid={uid!} /> <Likecount t={e.id}/> </div>
               <button>bookmark</button>
+              <Commentbutton tweet={data[index]} uid={uid!} />
+            
             </div>
           </div>
-        </>
+        </div>
       ))}
     </div>
   );

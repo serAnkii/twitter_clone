@@ -5,7 +5,7 @@ import {  likes } from "@/utility/helpers";
 import { BiBookmark, BiLike } from "react-icons/bi";
 import {useState , useEffect} from "react"
 // import Buttontype from "../Server-components/Buttontype";
-
+import { useRouter } from "next/navigation";
 
 type Likebuttonprops = {
   tweetid: string;
@@ -15,6 +15,7 @@ type Likebuttonprops = {
 
 
 const Likebutton =  ({ tweetid, uname, uid }: Likebuttonprops) => {
+  const router = useRouter();
   const [ispending, startTransition] = useTransition();
   const [userLiked, setUserLiked] = useState(false);
 
@@ -23,6 +24,7 @@ const Likebutton =  ({ tweetid, uname, uid }: Likebuttonprops) => {
       <button
         className="bg-transparent "
         onClick={() => {
+          // router.refresh() 
           startTransition(() => {
             likes({
               tweetid,
@@ -30,7 +32,7 @@ const Likebutton =  ({ tweetid, uname, uid }: Likebuttonprops) => {
               uname,
             });
           });
-          
+         
         }}
       >
         <BiLike/>

@@ -12,11 +12,11 @@ const Likecount = async ({t}:likecountprop) => {
         process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
     );
 
-    const res = await supabase.from('likes').select('*',{
+    const {data,error} = await supabase.from('likes').select('*',{
         count:'exact'
     }).eq('tweet_id', t);
 
-    const count = res.count
+    const count = data?.length
 
   return (
     <>

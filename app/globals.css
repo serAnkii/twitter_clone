@@ -49,3 +49,9 @@ input{
   display: grid;
   grid-template-rows:1fr 1fr 1fr;
 }
+
+.overlay{
+  backdrop-filter: blur(1px);
+  background-color: #1d41663f;
+  
+}

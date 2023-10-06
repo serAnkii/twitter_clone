@@ -14,10 +14,11 @@ const Composetweet = () => {
 
     const tweet = Formdata.get("tweet");
 
+
     if (!tweet) {
       return;
     }
-
+    
     const supabase = createServerComponentClient<Database>({ cookies });
     const username = (await supabase.auth.getSession()).data.session?.user
       .user_metadata.username;
@@ -32,6 +33,10 @@ const Composetweet = () => {
     if (error) {
       console.error("Error submitting tweet:", error);
       return;
+    }
+    else{
+      revalidatePath("/")
+    
     }
   }
 
