@@ -6,7 +6,7 @@ import { BiComment } from "react-icons/bi";
 import { reply } from "@/utility/helpers";
 import { toast } from "sonner";
 
-export const Commentbutton = ({ tweet , uid }: { tweet: any,uid:string }) => {
+export const Commentbutton = ({ tweet , uid,uname}: { tweet: any,uid:string,uname:string }) => {
   const [replymsg,changemessage] =  useState("")
   
   const tweetid:string = tweet.id
@@ -24,7 +24,8 @@ export const Commentbutton = ({ tweet , uid }: { tweet: any,uid:string }) => {
       reply({
         tweetid,
         uid,
-        reply:replymsg
+        reply:replymsg,
+        uname
       })
     })
 
@@ -38,15 +39,14 @@ export const Commentbutton = ({ tweet , uid }: { tweet: any,uid:string }) => {
       </button>
       {isOpen && (
         <div
-          className="fixed top-0 left-0 w-screen h-screen flex justify-center  z-[50] overlay close-btn"
+          className="fixed top-0 left-0 w-screen h-screen flex justify-center z-50 overlay close-btn"
           onClick={handelclick}
         >
-          <div className="bg-[#000] p-4 shadow-lg shadow-black w-[42%] h-[50%] z-[100]  relative top-[5%] rounded-xl">
+          <div className="bg-[#000] p-4 shadow-lg shadow-black w-[42%] h-[50%]   relative top-[5%] rounded-xl">
             <span
-              className="absolute text-white rounded-sm cursor-pointer z-[200] text-3xl left-[0%] top-[0%] close-btn"
-              onClick={handelclick}
+              className="absolute text-white rounded-sm cursor-pointer z-50 text-3xl left-[0%] top-[0%]"
             >
-              <GiCancel />
+              <GiCancel className="close-btn" onclick={handelclick}/>
             </span>
 
             <div className="h-[fit-content] w-[39.5vw]  p-4 flex flex-col gap-y-6 ">

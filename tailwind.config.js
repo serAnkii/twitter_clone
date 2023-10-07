@@ -24,6 +24,9 @@ module.exports = {
 
       colors: {
         twitter: "#1a8cd8",
+        border:"#2f3336",
+        icon:"#e7e9ea",
+        holder:"#71767b"
       },
 
       // Other Tailwind CSS configuration...

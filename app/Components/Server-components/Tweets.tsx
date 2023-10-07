@@ -1,97 +1,42 @@
 "use server";
-import { createClient } from "@supabase/supabase-js";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import Likebutton from "../Client-components/Likebutton";
-import { cookies } from "next/headers";
 import Likecount from "./Likecount";
-import { revalidatePath } from "next/cache";
+import Tweetdata from "../Client-components/Tweetdata";
 import { Commentbutton } from "../Client-components/CommentButton";
-
-const supabase = createServerComponentClient({cookies})
-
-async function getdata() {
-  const uobj = await supabase.auth.getSession()
-  const uname =  uobj.data.session?.user.user_metadata.username
-  const uid = uobj.data.session?.user.id
-
-  return{uname,uid}
-}
-
+import { gettweets, getuserdata, isliked } from "@/utility/helpers";
+import { Bookmark } from "lucide-react";
 const Tweets = async () => {
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
-
-  
-  
-  const {uname,uid} = await getdata(); 
-  
-
-
-  const { data } = await supabase.from("tweets").select();
-
-  data?.reverse();
-
-
-  
-
-
-
+  let data = await gettweets();
+  data?.reverse(); // Assign the reversed array back to data
+  const { uname, uid } = await getuserdata();
   return (
-    <div>
-      {data?.map((e,index) => (
-        <div>
-          <div className=" border-2 border-solid border-[#2f3336] h-[fit-content] w-[39.5vw] hover:bg-[#080808] p-4 flex flex-col gap-y-6 ">
-            <h1 className="font-serif font-bold text-xl">
-              <span className="text-twitter"> @ {e.created_by}</span> Tweeted
-            </h1>
-            <p className="text-2xl capitalize first-letter:text-2xl font-serif font-bold  ">
-              {e.text}
-            </p>
-            <h1 className="text-xs text-[#71767b] ">
-              Created at : {e.created_at}
-            </h1>
-            <div className="flex justify-around">
-              <div className="flex gap-3"><Likebutton tweetid={e.id } uname={uname} uid={uid!} /> <Likecount t={e.id}/> </div>
-              <button>bookmark</button>
-              <Commentbutton tweet={data[index]} uid={uid!} />
-            
+    <>
+      {data?.map((e, index) => (
+        <div className="hover:bg-[#080808]  h-fit w-full bg-black p-4 border border-solid border-gray-800 shadow-md " key={e.id}>
+          <Tweetdata
+            created_at={e.created_at}
+            created_by={e.created_by}
+            text={e.text}
+            tweetid={e.id}
+          />
+
+          <div className="flex justify-between mt-4">
+            <div className="flex gap-3 items-center">
+              
+              <Likebutton tweetid={e.id} uname={uname} uid={uid!} />
+              <Likecount t={e.id} />
+            </div>
+            <div className="flex items-center space-x-4">
+              <Commentbutton tweet={data![index]} uid={uid!} uname={uname} />
+              <button disabled>
+                <Bookmark />
+              </button>
             </div>
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 
 export default Tweets;
-
-// const FilteredTweets = async () => {
-
-//   const supabase = createClient(  process.env.NEXT_PUBLIC_SUPABASE_URL!,  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!)
-
-//   const {data} = await supabase.from('tweets').select()
-
-//   data?.reverse();
-
-//   const uname = helper()
-
-// return (
-//   <div>{
-//       data?.map((e)=>(
-//           <>
-//           <div className=' border-2 border-solid border-[#2f3336] h-[40vh] w-[39.5vw] hover:bg-[#080808] p-4 flex flex-col gap-y-6 '>
-//               <h1><span></span></h1>
-//               <p className='text-2xl capitalize first-letter:text-2xl font-serif font-bold '>{e.text}</p>
-//               <h1 className='text-xs text-[#71767b] '>Created at : {e.created_at}</h1>
-//           </div>
-//           </>
-//       )
-
-//       )
-//       }</div>
-// )
-// }
-
-// export { FilteredTweets }

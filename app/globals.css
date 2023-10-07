@@ -8,8 +8,66 @@ body{
   padding: 0;
   box-sizing: border-box;
   color: white;
+  display: grid;
+  grid-template-columns: 1.7fr 2.7fr 2.3fr;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* //////////////other styles///////// */
 ::-webkit-scrollbar{
   display: none;
 }

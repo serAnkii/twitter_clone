@@ -128,22 +128,28 @@ export interface Database {
           id: string
           reply_id: string | null
           text: string
+          time: string | null
           tweet_id: string | null
           user_id: string
+          username: string | null
         }
         Insert: {
           id: string
           reply_id?: string | null
           text: string
+          time?: string | null
           tweet_id?: string | null
           user_id: string
+          username?: string | null
         }
         Update: {
           id?: string
           reply_id?: string | null
           text?: string
+          time?: string | null
           tweet_id?: string | null
           user_id?: string
+          username?: string | null
         }
         Relationships: [
           {

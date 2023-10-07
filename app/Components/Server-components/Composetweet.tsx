@@ -1,48 +1,32 @@
-import React from "react";
-import { cookies, headers } from "next/headers";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { Database } from "@/lib/database.types";
-import { randomUUID } from "crypto";
+"use client"
+import { sumbittweet } from "@/utility/helpers";
 import { toast } from "sonner";
-import { error } from "console";
-import { revalidatePath } from "next/cache";
-import Form from "../Client-components/Form";
-
+import {useState} from "react"
 const Composetweet = () => {
-  async function submit(Formdata: FormData) {
-    "use server";
-
-    const tweet = Formdata.get("tweet");
+  
 
 
-    if (!tweet) {
-      return;
-    }
-    
-    const supabase = createServerComponentClient<Database>({ cookies });
-    const username = (await supabase.auth.getSession()).data.session?.user
-      .user_metadata.username;
-    const pfpid = (await supabase.auth.getSession()).data.session?.user.id;
-    const { data, error } = await supabase.from("tweets").insert({
-      id: randomUUID(),
-      text: tweet.toString(),
-      created_by: username,
-      profile_id: pfpid,
-    } as any);
-
-    if (error) {
-      console.error("Error submitting tweet:", error);
-      return;
-    }
-    else{
-      revalidatePath("/")
-    
-    }
-  }
-
+  
   return (
-    <form action={submit} className="flex flex-col w-full h-full">
-      <Form />
+    <form action={sumbittweet} className="w-full p-2 pt-1 border-b-[3px] border-border">
+      <input
+        type="text"
+        required
+        name="tweet"
+        className="w-full h-full text-2xl text-icon placeholder:text-holder bg-transparent outline-none border-none"
+        placeholder="What is happening?!"
+
+      />
+      <div className="w-full justify-between items-center flex">
+        <div></div>
+        <div className="w-full max-w-[100px]">
+          <button
+            type="submit"
+            className="rounded-full bg-twitterColor px-4 py-2 w-full text-lg text-center hover:bg-opacity-70 transition duration-200 font-bold bg-twitter">
+            Post
+          </button>
+        </div>
+      </div>
     </form>
   );
 };

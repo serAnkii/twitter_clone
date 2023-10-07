@@ -1,12 +1,10 @@
 "use client";
 
 import { useTransition } from "react";
-import {  likes } from "@/utility/helpers";
-import { BiBookmark, BiLike } from "react-icons/bi";
+import { isliked, likes } from "@/utility/helpers";
+import {AiFillHeart,AiOutlineHeart} from "react-icons/ai"
 import {useState , useEffect} from "react"
-// import Buttontype from "../Server-components/Buttontype";
-import { useRouter } from "next/navigation";
-
+import { toast } from "sonner";
 type Likebuttonprops = {
   tweetid: string;
   uname: string;
@@ -14,12 +12,15 @@ type Likebuttonprops = {
 };
 
 
-const Likebutton =  ({ tweetid, uname, uid }: Likebuttonprops) => {
-  const router = useRouter();
+const Likebutton =({ tweetid, uname, uid }: Likebuttonprops) => {
+ 
   const [ispending, startTransition] = useTransition();
-  const [userLiked, setUserLiked] = useState(false);
+  
+  const [isLiked, setIsLiked] = useState(false);
 
-  return (
+
+
+return (
     <div>
       <button
         className="bg-transparent "
@@ -31,11 +32,12 @@ const Likebutton =  ({ tweetid, uname, uid }: Likebuttonprops) => {
               uid,
               uname,
             });
+            toast.loading("(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧")
           });
          
         }}
       >
-        <BiLike/>
+        {<AiOutlineHeart/>}
       </button>
     </div>
   );

@@ -1,7 +1,7 @@
 "use server"
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
-// import { FilteredTweets } from "../Components/Client-components/Tweets";
+import LogoutButton from "../Components/Server-components/LogoutButton";
 
 const page = async () => {
   const supabase = createServerComponentClient({ cookies });
@@ -15,7 +15,12 @@ const page = async () => {
 
 
   return (
-    <div className="h-full w-[50%] overflow-scroll max-md:w-[100%] border-l-[0.5px] border-r-[0.5px] border-gray-600 overflow-x-hidden flex flex-col ">
+    
+    <div className="h-full w-[100%] overflow-scroll max-md:w-[100%] border-l-[0.5px] border-r-[0.5px] border-gray-600 overflow-x-hidden flex flex-col ">
+       <div className="sticky top-0 flex p-3 pl-4 border-b-[1px] border-border justify-between items-center bg-transparent backdrop-blur-sm z-50">
+        <h1 className="font-semibold text-2xl text-icon">Your Profile</h1>
+        <LogoutButton/>
+      </div>
       <div className="flex flex-col gap-6 border-solid border-[#2f3336] border-2 p-4">
         <h1 className="font-serif font-bold text-2xl">
           HELLO <span className="text-pink-600"> @ {username}</span>

@@ -1,4 +1,5 @@
 import "./globals.css";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
@@ -20,26 +21,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
 
-   
-    const headersList = headers();
-    const domain = headersList.get('host') || "";
-    const fullUrl = headersList.get('referer') || "";
+    // to get the url   
+    // const headersList = headers();
+    // const domain = headersList.get('host') || "";
+    // const fullUrl = headersList.get('referer') || "";
 
-    // const isLogin = fullUrl === /login`
 
 
   return (
     <html lang="en" >
       <Toaster position="bottom-center" richColors theme="dark" />
 
-      <body className="relative h-screen w-screen overflow-hidden" >
-        <div className="h-full w-[100vw] bg-black flex justify-around items-center">
-          <div className="w-[80vw] h-screen flex ">
+      <body className="relative h-screen w-screen overflow-hidden bg-black">
             <Sidebar />
             {children} 
             <Rightsection />
-          </div>
-        </div>
       </body>
     </html>
   );
