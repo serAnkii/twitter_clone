@@ -10,13 +10,7 @@ import Likecount from "@/app/Components/Server-components/Likecount";
 import { Commentbutton } from "@/app/Components/Client-components/CommentButton";
 import { Bookmark } from "lucide-react";
 
-const page = async ({
-  params,
-  Formdata,
-}: {
-  params: { id: string };
-  Formdata: FormData;
-}) => {
+const page = async ({params,}: {params: { id: string }}) => {
   const { uname, uid } = await getuserdata();
   const tweet = await getsingletweet(params.id);
 
