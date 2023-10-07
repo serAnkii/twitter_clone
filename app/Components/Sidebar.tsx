@@ -43,6 +43,7 @@ const NAV = [
   {
     title: "Bookmarks",
     icon: BsBookmark,
+    href:"./bookmarks"
   },
   {
     title: "Profile",
