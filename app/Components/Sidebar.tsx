@@ -57,13 +57,13 @@ const Sidebar = async () => {
 
   return (
     <div className="mainSidebar ">
-      <div className=" w-[70%] ml-auto gap-8 pt-3 flex flex-col h-[90%]">
+      <div className=" w-[70%] ml-auto gap-8 pt-3 flex flex-col h-[90%] max-md:w-100% max-md:ml-0 max-lg:h-[80%] max-sm:w-[100%]">
         {NAV.map((ele) => (
           <Link
             key={ele.title}
             href={`/${ele.href}`}
             id={ele.title}
-            className="flex gap-3 max-xl:w-fit max-xl:ml-auto" 
+            className="flex gap-3 max-xl:w-fit max-xl:ml-auto max-sm:ml-0 " 
           >
             <div className="w-[15%] flex justify-center items-center">
               <i className="text-4xl">
@@ -78,16 +78,16 @@ const Sidebar = async () => {
         ))}
       </div>
 
-      <div className="w-[70%] ml-auto h-[10%] p-1">
+      <div className="w-[70%] ml-auto h-[10%] p-1 max-sm:w-[100%]">
         <div className="flex gap-4">
           <div className="w-[15%] flex justify-center items-center">
-            <i className="text-4xl text-twitter">
+            <i className="text-4xl text-twitter max-sm:hidden">
               <CgProfile />
             </i>
           </div>
 
           <div className="w-[70%]">
-            <h1 className="text-xl ">Signed-in as</h1>
+            <h1 className="text-xl max-md:hidden ">Signed-in as</h1>
             <h1 className="text-xl text-twitter capitalize">{uname}</h1>
           </div>
         </div>

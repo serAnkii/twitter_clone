@@ -23,14 +23,14 @@ const page = async () => {
       </div>
       <div className="flex flex-col gap-6 border-solid border-[#2f3336] border-2 p-4">
         <h1 className="font-serif font-bold text-2xl">
-          HELLO <span className="text-pink-600"> @ {username}</span>
+          HELLO <span className="text-pink-600">{username}</span>
         </h1>
 
         <p className="text-2xs text-center text-[#71767b] font-serif">
           We hope you are doing extremly Well and Thankyou for joining us.
         </p>
 
-        <h2 className="font-serif font-bold text-3xs">
+        <h2 className="font-serif font-bold text-3xs w-fit max-md:text-xs">
           Your registered E-mail : <span className="text-twitter">  {email}</span>
         </h2>
       </div>
