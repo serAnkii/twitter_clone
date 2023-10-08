@@ -56,8 +56,8 @@ const Sidebar = async () => {
   const { uname } = await getuserdata();
 
   return (
-    <div className="mainSidebar ">
-      <div className=" w-[70%] ml-auto gap-8 pt-3 flex flex-col h-[90%] max-md:w-100% max-md:ml-0 max-lg:h-[80%] max-sm:w-[100%]">
+    <div className="mainSidebar">
+      <div className=" w-[70%] ml-auto gap-8 pt-3 flex flex-col h-[90%] max-md:w-100% max-md:ml-0 max-lg:h-[80%] max-sm:w-[100%] max-sm:items-center">
         {NAV.map((ele) => (
           <Link
             key={ele.title}

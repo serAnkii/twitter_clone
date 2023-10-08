@@ -1,6 +1,16 @@
 import "@/app/globals.css";
+import { getuserdata } from "@/utility/helpers";
 import Link from "next/link";
-export default function Login() {
+import { redirect } from "next/navigation";
+export default async function Login() {
+
+  const {uname} = await  getuserdata()
+
+  if(uname)
+  {
+    redirect("/")
+  }
+
   return (
     <>
       <div
@@ -11,6 +21,9 @@ export default function Login() {
           Twitter <span className="text-pink-600"> X</span>
         </h1>
 
+        <h1 className="w-screen text-center text-2xl font-bold backdrop-blur-lg">Visitor? <br /> username= <span className="text-twitter">guest@gmail.com</span> <br /> password= <span className="text-twitter">12345678 </span> </h1>
+
+
         <div className="flex w-screen h-[70%] ">
           <div className="flex w-screen h-[100%] ">
             <div
@@ -20,7 +33,7 @@ export default function Login() {
               <h1 className="text-4xl text-center tracking-[0.5rem] w-100%">
                 LOGIN
               </h1>
-
+              
               <form
                 id="form-signin"
                 className="items-center justify-center"

@@ -1,19 +1,31 @@
 import "@/app/globals.css";
+import { getuserdata } from "@/utility/helpers";
 import Link from "next/link";
-export default function Login() {
+import { redirect } from "next/navigation";
+export default async function Login() {
+  const { uname } = await getuserdata();
+
+  if (uname) {
+    redirect("/");
+  }
+
   return (
     <>
       <div
         id="mainloginpage"
         className="bg-black h-screen w-screen flex  flex-col absolute left-0 z-50"
       >
+        
         <h1 className="text-[5rem] w-screen text-center font-bold text-twitter">
           Twitter <span className="text-pink-600"> X</span>
         </h1>
 
         <div className="flex w-screen h-[70%]">
           <div className="flex w-screen h-[100%] ">
-            <div id="sign-up" className="backdrop-blur-sm w-[100%] p-4 h-[100%]  flex flex-col">
+            <div
+              id="sign-up"
+              className="backdrop-blur-sm w-[100%] p-4 h-[100%]  flex flex-col"
+            >
               <h1 className="text-4xl tracking-[0.5rem] text-center w-[100%]">
                 SIGN UP
               </h1>
@@ -49,12 +61,9 @@ export default function Login() {
                   </button>
                 </div>
                 <div className="flex justify-center items-center">
-                <Link
-                  href={"/login"}
-                  className="font-bold"
-                >
-                  Sign-in?
-                </Link>
+                  <Link href={"/login"} className="font-bold">
+                    Sign-in?
+                  </Link>
                 </div>
               </form>
             </div>

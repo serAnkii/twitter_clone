@@ -96,7 +96,7 @@ export const getreplies = async (tweetid: string) => {
         console.log(error.message)
         return
     }
-    return  data 
+    return  data ;
 
 }
 
