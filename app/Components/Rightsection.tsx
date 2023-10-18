@@ -13,7 +13,7 @@ const Rightsection = async () => {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "36a13ab5b2msh45cd9649608a26bp1ece07jsnc83e86b2c19a",
+      "X-RapidAPI-Key": "36a13ab5b2msh45cd9649608a26bp1ece07jsnc83e86b2c19a",//not so confidencial so pushing it directly feel free to use , if any.
       "X-RapidAPI-Host": "news-api14.p.rapidapi.com",
     },
   };
@@ -26,7 +26,7 @@ const Rightsection = async () => {
 
   return (
     <div className="max-lg:hidden h-screen flex flex-col bg-black overflow-y-auto text-white">
-    <div className="sticky top-0 flex p-5 pl-4 border-b-[1px] border-border bg-transparent backdrop-blur-sm z-50">
+    <div className="sticky top-0 flex p-5 pl-4 border-b-[1px] border-border bg-transparent backdrop-blur-sm ">
       <h1 className="text-xl font-bold">TwitterX News <span className="text-gray-400">Stay updated</span> </h1>
       
     </div>
