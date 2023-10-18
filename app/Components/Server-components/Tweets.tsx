@@ -29,7 +29,7 @@ const Tweets = async () => {
       {tweets&& tweets?.map((e, index) => (
         <div className="hover:bg-[#080808]  h-fit w-full bg-black p-4 border border-solid border-gray-800 shadow-md " key={e.id}>
           <Tweetdata
-            created_at={e.created_at!.toString()}
+            created_at={String(e.created_at).slice(0,16).replace("T","/ ")}
             created_by={e.created_by!}
             text={e.text}
             tweetid={e.id}

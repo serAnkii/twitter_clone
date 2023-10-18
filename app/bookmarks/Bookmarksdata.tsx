@@ -1,5 +1,3 @@
-import router from "next/router";
-import { toast } from "sonner";
 import getbookmarks from "../api/bookmarks";
 
 interface Tweet {

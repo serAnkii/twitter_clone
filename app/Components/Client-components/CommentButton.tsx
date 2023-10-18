@@ -52,7 +52,7 @@ export const Commentbutton = ({ tweet , uid,uname}: { tweet: any,uid:string,unam
             <div className="h-[fit-content] w-[39.5vw]  p-4 flex flex-col gap-y-6 ">
               <h1 className="font-serif font-bold text-xl">
                  @ {tweet.created_by} <span className="text-xs text-[#71767b] ">
-                Tweeted at : {tweet.created_at} </span>
+                Tweeted at : {String(tweet.created_at)} </span>
               </h1>
               <p className="text-2xl capitalize first-letter:text-2xl font-serif font-bold border-[#2f3336] border border-solid p-2 pl-4 rounded-xl ">
                 {tweet.text}
