@@ -1,11 +1,13 @@
 import prisma from "@/prisma/prisma";
+import { getuserdata } from "@/utility/helpers";
 export default async function getbookmarks() {
-    const id = '48c04d8e-9f52-4ba1-8549-d4655917ff0e'
+    const {uid} = await getuserdata()
     const bookmarks = await prisma.$queryRaw`SELECT DISTINCT tweets.*
     FROM tweets
     JOIN bookmarks ON tweets.id = bookmarks.tweet_id
-    WHERE bookmarks.user_id = ${id}::uuid;
+    WHERE bookmarks.user_id = ${uid}::uuid;
     `
-    console.log("therse",bookmarks)
+    
+    
     return bookmarks;
 }

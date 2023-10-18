@@ -24,7 +24,7 @@ const Bookmarksdata = async () => {
             {e.text}
           </p>
           <h1 className="text-xs text-gray-500">
-            Created at: {String(e.created_at)}
+            Created at: {String(e.created_at).slice(0,15)}
           </h1>
         </div>
       ))}
