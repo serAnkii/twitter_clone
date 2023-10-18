@@ -1,10 +1,9 @@
 "use client";
 
-import { useTransition } from "react";
 import { isliked, likes } from "@/utility/helpers";
-import {AiFillHeart,AiOutlineHeart} from "react-icons/ai"
-import {useState , useEffect} from "react"
-import { toast } from "sonner";
+import { useEffect, useState, useTransition } from "react";
+import {AiFillHeart, AiOutlineHeart} from "react-icons/ai"
+
 type Likebuttonprops = {
   tweetid: string;
   uname: string;
@@ -14,30 +13,28 @@ type Likebuttonprops = {
 
 const Likebutton =({ tweetid, uname, uid }: Likebuttonprops) => {
  
-  const [ispending, startTransition] = useTransition();
-  
-  const [isLiked, setIsLiked] = useState(false);
+  const [liked,setisliked] = useState(0)
+  const helper = async ()=>{
+    const data =await likes({tweetid,uname,uid})
+    
+  }
 
+  useEffect(()=>{
+    const data = async ()=>{
+       const temp = await isliked({tweetid,uid});
+       setisliked(temp!);
+    }
+
+    data();
+  },[helper])
 
 
 return (
     <div>
       <button
-        className="bg-transparent "
-        onClick={() => {
-          // router.refresh() 
-          startTransition(() => {
-            likes({
-              tweetid,
-              uid,
-              uname,
-            });
-            toast.loading("(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧")
-          });
-         
-        }}
-      >
-        {<AiOutlineHeart/>}
+        className="bg-transparent" onClick={helper}>
+        
+        {liked?<AiFillHeart className="text-pink-600"/>:<AiOutlineHeart/>}
       </button>
     </div>
   );

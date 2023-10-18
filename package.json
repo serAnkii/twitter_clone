@@ -8,9 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "generate": "drizzle-kit generate:pg",
-    "migrate":"npx bun /lib/index.ts"
+    "migrate": "npx bun /lib/index.ts"
   },
   "dependencies": {
+    "@prisma/client": "^5.4.2",
     "@supabase/auth-helpers-nextjs": "^0.8.1",
     "@supabase/supabase-js": "^2.36.0",
     "class-variance-authority": "^0.7.0",
@@ -18,9 +19,8 @@
     "drizzle-orm": "^0.28.6",
     "lucide-react": "^0.279.0",
     "next": "latest",
-    "pg": "^8.11.3",
-    "pg-pool": "^3.6.1",
     "postgres": "^3.3.5",
+    "prisma": "^5.4.2",
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^4.11.0",
@@ -30,8 +30,8 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@types/node": "latest",
-    "@types/react": "latest",
+    "@types/node": "^20.8.6",
+    "@types/react": "^18.2.28",
     "@types/react-dom": "latest",
     "@types/uuid": "^9.0.4",
     "autoprefixer": "latest",

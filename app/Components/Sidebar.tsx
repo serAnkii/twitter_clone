@@ -3,11 +3,9 @@ import React from "react";
 import { BiHomeCircle, BiUser } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import {
-  BsBell,
   BsBookmark,
   BsTwitter,
   BsEnvelope,
-  BsThreeDots,
 } from "react-icons/bs";
 import { HiOutlineHashtag } from "react-icons/hi";
 import { HiEnvelope } from "react-icons/hi2";

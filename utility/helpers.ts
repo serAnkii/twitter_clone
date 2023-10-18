@@ -6,15 +6,16 @@ import { cookies } from "next/headers";
 import { randomUUID } from "crypto";
 import { revalidatePath } from "next/cache";
 
-
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
+const supabase = createClient<Database>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
 
 export const likes = async ({ tweetid, uid, uname }: { tweetid: string, uid: string, uname: string }) => {
 
-    const supabase = createClient<Database>(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
 
 
     const { data, error } = await supabase.from('likes').select().eq("tweet_id", tweetid).eq("user_id", uid)
@@ -38,35 +39,23 @@ export const likes = async ({ tweetid, uid, uname }: { tweetid: string, uid: str
     revalidatePath("/")
 }
 
-export const isliked = async ({ tweetid, uid}: { tweetid: string, uid: string}) => {
 
-    const supabase = createClient<Database>(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
-    
+export const isliked = async ({ tweetid, uid }: { tweetid: string, uid: string }) => {
 
 
-    const { data, error } = await supabase.from('likes').select().eq("user_id",uid).eq("tweet_id",tweetid)
 
-    if(data?.length==0){
-        return false
-    }
-    else {
-        return true;
-    }
+    const { data, error } = await supabase.from('likes').select().eq("tweet_id", tweetid).eq("user_id", uid)
 
 
+    return data?.length
 }
 
 
 
 
+
+
 export const reply = async ({ tweetid, uid, reply, uname }: { tweetid: string, uid: string, reply: string, uname: string }) => {
-    const supabase = createClient<Database>(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
 
 
 
@@ -83,12 +72,40 @@ export const reply = async ({ tweetid, uid, reply, uname }: { tweetid: string, u
 }
 
 
+export const addOrRemoveBookmark = async ({ tweetid, uid }: { tweetid: string, uid: string }) => {
+
+    const { data, error } = await supabase.from("bookmarks").select().eq("tweet_id", tweetid).eq("user_id", uid)
+    if (data?.length == 0) {
+        const { data, error } = await supabase.from("bookmarks").insert({
+            id: randomUUID(),
+            tweet_id: tweetid,
+            user_id: uid,
+        })
+        console.log(data, error)
+    }
+    else {
+        await supabase.from("bookmarks").delete().eq("tweet_id", tweetid).eq("user_id", uid);
+    }
+
+    revalidatePath("/")
+
+}
+
+
+export const isbookmarked = async ({ tweetid, uid }: { tweetid: string, uid: string }) => {
+
+
+
+    const { data, error } = await supabase.from('bookmarks').select().eq("tweet_id", tweetid).eq("user_id", uid)
+
+
+    return data?.length
+}
+
+
+
 export const getreplies = async (tweetid: string) => {
 
-    const supabase = createClient<Database>(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
 
 
     const { data, error } = await supabase.from("replies").select().eq("tweet_id", tweetid)
@@ -96,30 +113,38 @@ export const getreplies = async (tweetid: string) => {
         console.log(error.message)
         return
     }
-    return  data ;
+    return data;
 
 }
+
+
+
 
 export const gettweets = async () => {
-    const supabase = createClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
+    // const supabase = createClient(
+    //     process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    //     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    // );
 
-    const { data, error } = await supabase.from("tweets").select();
+    // const { data, error } = await supabase.from("tweets").select();
 
-    if (error) {
-        console.log(error.message)
-    }
+    // if (error) {
+    //     console.log(error.message)
+    // }
 
-    return data
+
+    // return data;
+    // Assuming your Tweet interface is defined somewhere like this
+
+
+    const tweets = await prisma.$queryRaw`SELECT * from tweets`;
+
+    // Assuming tweets is an array, you can use 'as' to cast it to the expected type
+    return tweets;
 }
 
+
 export const getsingletweet = async (id: string) => {
-    const supabase = createClient<Database>(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
 
     const { data, error } = await supabase.from("tweets").select().eq("id", id);
 
@@ -164,8 +189,15 @@ export async function sumbittweet(Formdata: FormData) {
         return;
     }
     else {
-        
+
         revalidatePath("/")
 
     }
+}
+
+
+export const getallbookmarks = async () => {
+    const id = (await supabase.auth.getSession()).data.session?.user.id
+    const { data } = await supabase.from("bookmarks").select().eq("user_id", id!)
+    console.log(data);
 }

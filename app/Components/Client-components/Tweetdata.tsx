@@ -32,7 +32,7 @@ const Tweetdata = ({
     <p className="text-2xl capitalize first-letter:text-2xl font-serif font-bold text-white">
       {text}
     </p>
-    <h1 className="text-xs text-gray-500">Created at: {(created_at).slice(0,16).replace("T","/ ")}</h1>
+    <h1 className="text-xs text-gray-500">Created at: {(created_at)}</h1>
   </div>
   
   );
